@@ -18,10 +18,10 @@ class JFTReading {
     var quote: String
     var body: String
     var afffirmation: String
-    var postsJFT: [JFTPost]
+    var postsJFT: [JFTPost]?
     var uuid: String
     
-    init(date: String, title: String, quote: String, body: String, afffirmation: String, posts: [JFTPost], uuid: String) {
+    init(date: String, title: String, quote: String, body: String, afffirmation: String, posts: [JFTPost] = [], uuid: String = UUID().uuidString) {
         self.date = date
         self.title = title
         self.quote = quote

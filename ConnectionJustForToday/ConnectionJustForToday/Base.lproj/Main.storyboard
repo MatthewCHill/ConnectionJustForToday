@@ -1,8 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mgy-jX-18F">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5oa-dU-4qS">
+            <objects>
+                <tabBarController id="Mgy-jX-18F" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5mW-se-520">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="82R-HK-HpF" kind="relationship" relationship="viewControllers" id="LdW-sJ-CcL"/>
+                        <segue destination="WgP-mn-b9W" kind="relationship" relationship="viewControllers" id="awa-Rz-VMb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZv-XX-hMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-413" y="-316"/>
+        </scene>
+        <!--Just For Today-->
+        <scene sceneID="79C-Oc-g0Z">
+            <objects>
+                <viewController title="Just For Today" id="82R-HK-HpF" customClass="TestingMockDataViewController" customModule="ConnectionJustForToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OMQ-Cg-Des">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just For Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw8-Ds-NZE">
+                                <rect key="frame" x="138.33333333333334" y="59.000000000000007" width="116.66666666666666" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-Yk-ZDo">
+                                <rect key="frame" x="10" y="104" width="59" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Title)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n68-aT-vbH">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVM-qR-k4N">
+                                        <rect key="frame" x="0.0" y="28.333333333333343" width="59" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Quote)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H99-oV-oew">
+                                        <rect key="frame" x="0.0" y="56.666666666666664" width="59" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-bp-pfO">
+                                <rect key="frame" x="0.0" y="186" width="393" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="KQ2-tv-Heh"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(JFT Aspiration)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03X-g7-Ctc">
+                                <rect key="frame" x="10.000000000000007" y="441" width="121.66666666666669" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AHd-y6-qgx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="03X-g7-Ctc" firstAttribute="leading" secondItem="AHd-y6-qgx" secondAttribute="leading" constant="10" id="1eU-VY-r9d"/>
+                            <constraint firstItem="uDb-Yk-ZDo" firstAttribute="leading" secondItem="AHd-y6-qgx" secondAttribute="leading" constant="10" id="BlE-mu-tnb"/>
+                            <constraint firstItem="3IR-bp-pfO" firstAttribute="top" secondItem="uDb-Yk-ZDo" secondAttribute="bottom" constant="5" id="HE4-Xn-lhV"/>
+                            <constraint firstItem="03X-g7-Ctc" firstAttribute="top" secondItem="3IR-bp-pfO" secondAttribute="bottom" constant="5" id="ktH-B1-o0Y"/>
+                            <constraint firstItem="3IR-bp-pfO" firstAttribute="leading" secondItem="AHd-y6-qgx" secondAttribute="leading" id="lnL-Lk-kZe"/>
+                            <constraint firstItem="AHd-y6-qgx" firstAttribute="trailing" secondItem="3IR-bp-pfO" secondAttribute="trailing" id="nhp-Qw-LaI"/>
+                            <constraint firstItem="uDb-Yk-ZDo" firstAttribute="top" secondItem="AHd-y6-qgx" secondAttribute="top" constant="45" id="tH4-o7-aJb"/>
+                            <constraint firstItem="Bw8-Ds-NZE" firstAttribute="centerX" secondItem="AHd-y6-qgx" secondAttribute="centerX" id="y0q-Ph-S72"/>
+                            <constraint firstItem="Bw8-Ds-NZE" firstAttribute="top" secondItem="AHd-y6-qgx" secondAttribute="top" id="y8g-43-sJw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="JFT" image="calendar" catalog="system" id="sbc-7q-pL1"/>
+                    <connections>
+                        <outlet property="affirmationLabel" destination="03X-g7-Ctc" id="xch-pO-tCI"/>
+                        <outlet property="bodyTextView" destination="3IR-bp-pfO" id="EYY-Mc-gZn"/>
+                        <outlet property="dateLabel" destination="CVM-qR-k4N" id="fxG-5a-UiI"/>
+                        <outlet property="quoteLabel" destination="H99-oV-oew" id="FVh-mJ-9ot"/>
+                        <outlet property="titleLabel" destination="n68-aT-vbH" id="4B1-hm-NZX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozn-ku-hDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="536.64122137404581" y="-604.22535211267609"/>
+        </scene>
+        <!--SPAD-->
+        <scene sceneID="lPN-Tf-cqf">
+            <objects>
+                <viewController id="WgP-mn-b9W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qu4-TT-ALh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0Hz-qo-LuF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SPAD" image="note" catalog="system" id="rVw-kf-pWX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WhF-Rm-cfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="55"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="note" catalog="system" width="128" height="107"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

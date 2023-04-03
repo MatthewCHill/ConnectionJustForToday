@@ -16,12 +16,15 @@
 		349B277929D5D94000C30A17 /* JFTPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B277829D5D94000C30A17 /* JFTPost.swift */; };
 		349B277E29D5F9D400C30A17 /* SPADReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B277D29D5F9D400C30A17 /* SPADReading.swift */; };
 		349B278029D5FCBF00C30A17 /* SPADPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B277F29D5FCBF00C30A17 /* SPADPost.swift */; };
-		349B278229D6094200C30A17 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 349B278129D6094200C30A17 /* GoogleService-Info (1).plist */; };
+		349B278229D6094200C30A17 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 349B278129D6094200C30A17 /* GoogleService-Info.plist */; };
 		349B278529D60AD400C30A17 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278429D60AD400C30A17 /* FirebaseAuth */; };
 		349B278729D60AD400C30A17 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278629D60AD400C30A17 /* FirebaseDatabase */; };
 		349B278929D60AD400C30A17 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278829D60AD400C30A17 /* FirebaseFirestore */; };
 		349B278B29D60AD400C30A17 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278A29D60AD400C30A17 /* FirebaseStorage */; };
 		349B278D29D60DDA00C30A17 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B278C29D60DDA00C30A17 /* User.swift */; };
+		349B279229D615B100C30A17 /* TestingMockDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279129D615B100C30A17 /* TestingMockDataViewController.swift */; };
+		349B279529D6170200C30A17 /* JFTMockModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279429D6170200C30A17 /* JFTMockModelController.swift */; };
+		349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279729D6219F00C30A17 /* FirebaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +39,11 @@
 		349B277829D5D94000C30A17 /* JFTPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPost.swift; sourceTree = "<group>"; };
 		349B277D29D5F9D400C30A17 /* SPADReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReading.swift; sourceTree = "<group>"; };
 		349B277F29D5FCBF00C30A17 /* SPADPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADPost.swift; sourceTree = "<group>"; };
-		349B278129D6094200C30A17 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		349B278129D6094200C30A17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		349B278C29D60DDA00C30A17 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		349B279129D615B100C30A17 /* TestingMockDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingMockDataViewController.swift; sourceTree = "<group>"; };
+		349B279429D6170200C30A17 /* JFTMockModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTMockModelController.swift; sourceTree = "<group>"; };
+		349B279729D6219F00C30A17 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +80,14 @@
 		349B273F29D4916F00C30A17 /* ConnectionJustForToday */ = {
 			isa = PBXGroup;
 			children = (
-				349B277A29D5EAD200C30A17 /* Rescources */,
+				349B279629D6218600C30A17 /* HelperFiles */,
+				349B279329D616E400C30A17 /* ModelController */,
+				349B278E29D6146A00C30A17 /* ViewController */,
 				349B277729D5D88D00C30A17 /* SupportingFiles */,
 				349B277429D5D7DE00C30A17 /* Models */,
 				349B274629D4916F00C30A17 /* Main.storyboard */,
 				349B274B29D4917000C30A17 /* LaunchScreen.storyboard */,
-				349B278129D6094200C30A17 /* GoogleService-Info (1).plist */,
+				349B278129D6094200C30A17 /* GoogleService-Info.plist */,
 			);
 			path = ConnectionJustForToday;
 			sourceTree = "<group>";
@@ -107,11 +115,28 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		349B277A29D5EAD200C30A17 /* Rescources */ = {
+		349B278E29D6146A00C30A17 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				349B279129D615B100C30A17 /* TestingMockDataViewController.swift */,
 			);
-			path = Rescources;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		349B279329D616E400C30A17 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				349B279429D6170200C30A17 /* JFTMockModelController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		349B279629D6218600C30A17 /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				349B279729D6219F00C30A17 /* FirebaseService.swift */,
+			);
+			path = HelperFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,7 +209,7 @@
 				349B274D29D4917000C30A17 /* LaunchScreen.storyboard in Resources */,
 				349B274A29D4917000C30A17 /* Assets.xcassets in Resources */,
 				349B274829D4916F00C30A17 /* Main.storyboard in Resources */,
-				349B278229D6094200C30A17 /* GoogleService-Info (1).plist in Resources */,
+				349B278229D6094200C30A17 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +226,10 @@
 				349B274329D4916F00C30A17 /* SceneDelegate.swift in Sources */,
 				349B277E29D5F9D400C30A17 /* SPADReading.swift in Sources */,
 				349B278029D5FCBF00C30A17 /* SPADPost.swift in Sources */,
+				349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */,
 				349B278D29D60DDA00C30A17 /* User.swift in Sources */,
+				349B279229D615B100C30A17 /* TestingMockDataViewController.swift in Sources */,
+				349B279529D6170200C30A17 /* JFTMockModelController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
