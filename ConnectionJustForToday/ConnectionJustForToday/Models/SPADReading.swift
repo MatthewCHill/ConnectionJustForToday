@@ -15,13 +15,13 @@ class SPADReading {
     let title: String
     let quote: String
     let body: String
-    let aspiration: String
+    let affirmation: String
     
     init(date: String, title: String, quote: String, body: String, aspiration: String) {
         self.date = date
         self.title = title
         self.quote = quote
         self.body = body
-        self.aspiration = aspiration
+        self.affirmation = aspiration
     }
 }
