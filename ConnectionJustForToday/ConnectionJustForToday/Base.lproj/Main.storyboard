@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mgy-jX-18F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mgy-jX-18F">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="508" y="-680"/>
         </scene>
-        <!--View Controller-->
+        <!--Create User View Controller-->
         <scene sceneID="WNV-fE-vmj">
             <objects>
-                <viewController id="WTQ-Dc-dyh" sceneMemberID="viewController">
+                <viewController id="WTQ-Dc-dyh" customClass="CreateUserViewController" customModule="ConnectionJustForToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cCr-EM-EgM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +124,7 @@
         <!--Just For Today-->
         <scene sceneID="79C-Oc-g0Z">
             <objects>
-                <viewController title="Just For Today" id="82R-HK-HpF" customClass="TestingMockDataViewController" customModule="ConnectionJustForToday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Just For Today" id="82R-HK-HpF" customClass="JFTReadingViewController" customModule="ConnectionJustForToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OMQ-Cg-Des">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,7 +263,7 @@
         <!--SPAD-->
         <scene sceneID="lPN-Tf-cqf">
             <objects>
-                <viewController id="WgP-mn-b9W" sceneMemberID="viewController">
+                <viewController id="WgP-mn-b9W" customClass="SPADReadingViewController" customModule="ConnectionJustForToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qu4-TT-ALh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -395,7 +396,7 @@
         <!--User Settings-->
         <scene sceneID="nAC-Dy-dgs">
             <objects>
-                <viewController id="mbH-ev-7He" sceneMemberID="viewController">
+                <viewController id="mbH-ev-7He" customClass="UserSettingsViewController" customModule="ConnectionJustForToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OpM-i2-F3a">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

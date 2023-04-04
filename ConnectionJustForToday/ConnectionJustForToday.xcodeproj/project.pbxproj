@@ -16,15 +16,21 @@
 		349B277929D5D94000C30A17 /* JFTPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B277829D5D94000C30A17 /* JFTPost.swift */; };
 		349B277E29D5F9D400C30A17 /* SPADReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B277D29D5F9D400C30A17 /* SPADReading.swift */; };
 		349B278029D5FCBF00C30A17 /* SPADPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B277F29D5FCBF00C30A17 /* SPADPost.swift */; };
-		349B278229D6094200C30A17 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 349B278129D6094200C30A17 /* GoogleService-Info.plist */; };
 		349B278529D60AD400C30A17 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278429D60AD400C30A17 /* FirebaseAuth */; };
 		349B278729D60AD400C30A17 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278629D60AD400C30A17 /* FirebaseDatabase */; };
 		349B278929D60AD400C30A17 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278829D60AD400C30A17 /* FirebaseFirestore */; };
 		349B278B29D60AD400C30A17 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278A29D60AD400C30A17 /* FirebaseStorage */; };
 		349B278D29D60DDA00C30A17 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B278C29D60DDA00C30A17 /* User.swift */; };
-		349B279229D615B100C30A17 /* TestingMockDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279129D615B100C30A17 /* TestingMockDataViewController.swift */; };
-		349B279529D6170200C30A17 /* JFTMockModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279429D6170200C30A17 /* JFTMockModelController.swift */; };
 		349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279729D6219F00C30A17 /* FirebaseService.swift */; };
+		34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */; };
+		34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */; };
+		34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */; };
+		34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68429DCB700005ECA4E /* JFTReadingViewModel.swift */; };
+		34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68729DCB732005ECA4E /* UserSettingsViewController.swift */; };
+		34B7A68A29DCB741005ECA4E /* UserSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68929DCB741005ECA4E /* UserSettingViewModel.swift */; };
+		34B7A68D29DCB7F8005ECA4E /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68C29DCB7F8005ECA4E /* CreateUserViewController.swift */; };
+		34B7A68F29DCB813005ECA4E /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */; };
+		34B7A69129DCB8ED005ECA4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +45,17 @@
 		349B277829D5D94000C30A17 /* JFTPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPost.swift; sourceTree = "<group>"; };
 		349B277D29D5F9D400C30A17 /* SPADReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReading.swift; sourceTree = "<group>"; };
 		349B277F29D5FCBF00C30A17 /* SPADPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADPost.swift; sourceTree = "<group>"; };
-		349B278129D6094200C30A17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		349B278C29D60DDA00C30A17 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		349B279129D615B100C30A17 /* TestingMockDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingMockDataViewController.swift; sourceTree = "<group>"; };
-		349B279429D6170200C30A17 /* JFTMockModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTMockModelController.swift; sourceTree = "<group>"; };
 		349B279729D6219F00C30A17 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewController.swift; sourceTree = "<group>"; };
+		34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewController.swift; sourceTree = "<group>"; };
+		34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewModel.swift; sourceTree = "<group>"; };
+		34B7A68429DCB700005ECA4E /* JFTReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewModel.swift; sourceTree = "<group>"; };
+		34B7A68729DCB732005ECA4E /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		34B7A68929DCB741005ECA4E /* UserSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewModel.swift; sourceTree = "<group>"; };
+		34B7A68C29DCB7F8005ECA4E /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
+		34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +92,13 @@
 		349B273F29D4916F00C30A17 /* ConnectionJustForToday */ = {
 			isa = PBXGroup;
 			children = (
+				34B7A67729DCB62C005ECA4E /* Views */,
 				349B279629D6218600C30A17 /* HelperFiles */,
-				349B279329D616E400C30A17 /* ModelController */,
-				349B278E29D6146A00C30A17 /* ViewController */,
 				349B277729D5D88D00C30A17 /* SupportingFiles */,
 				349B277429D5D7DE00C30A17 /* Models */,
 				349B274629D4916F00C30A17 /* Main.storyboard */,
 				349B274B29D4917000C30A17 /* LaunchScreen.storyboard */,
-				349B278129D6094200C30A17 /* GoogleService-Info.plist */,
+				34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */,
 			);
 			path = ConnectionJustForToday;
 			sourceTree = "<group>";
@@ -115,28 +126,59 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		349B278E29D6146A00C30A17 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				349B279129D615B100C30A17 /* TestingMockDataViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		349B279329D616E400C30A17 /* ModelController */ = {
-			isa = PBXGroup;
-			children = (
-				349B279429D6170200C30A17 /* JFTMockModelController.swift */,
-			);
-			path = ModelController;
-			sourceTree = "<group>";
-		};
 		349B279629D6218600C30A17 /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
 				349B279729D6219F00C30A17 /* FirebaseService.swift */,
 			);
 			path = HelperFiles;
+			sourceTree = "<group>";
+		};
+		34B7A67729DCB62C005ECA4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				34B7A68B29DCB7E0005ECA4E /* CreateUser */,
+				34B7A68629DCB707005ECA4E /* UserSetting */,
+				34B7A67F29DCB6AA005ECA4E /* SPADReading */,
+				34B7A67829DCB635005ECA4E /* JFTReading */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34B7A67829DCB635005ECA4E /* JFTReading */ = {
+			isa = PBXGroup;
+			children = (
+				34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */,
+				34B7A68429DCB700005ECA4E /* JFTReadingViewModel.swift */,
+			);
+			path = JFTReading;
+			sourceTree = "<group>";
+		};
+		34B7A67F29DCB6AA005ECA4E /* SPADReading */ = {
+			isa = PBXGroup;
+			children = (
+				34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */,
+				34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */,
+			);
+			path = SPADReading;
+			sourceTree = "<group>";
+		};
+		34B7A68629DCB707005ECA4E /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				34B7A68729DCB732005ECA4E /* UserSettingsViewController.swift */,
+				34B7A68929DCB741005ECA4E /* UserSettingViewModel.swift */,
+			);
+			path = UserSetting;
+			sourceTree = "<group>";
+		};
+		34B7A68B29DCB7E0005ECA4E /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				34B7A68C29DCB7F8005ECA4E /* CreateUserViewController.swift */,
+				34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */,
+			);
+			path = CreateUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +251,7 @@
 				349B274D29D4917000C30A17 /* LaunchScreen.storyboard in Resources */,
 				349B274A29D4917000C30A17 /* Assets.xcassets in Resources */,
 				349B274829D4916F00C30A17 /* Main.storyboard in Resources */,
-				349B278229D6094200C30A17 /* GoogleService-Info.plist in Resources */,
+				34B7A69129DCB8ED005ECA4E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,16 +262,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */,
+				34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */,
 				349B277629D5D80800C30A17 /* JFTReading.swift in Sources */,
+				34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */,
 				349B274129D4916F00C30A17 /* AppDelegate.swift in Sources */,
 				349B277929D5D94000C30A17 /* JFTPost.swift in Sources */,
 				349B274329D4916F00C30A17 /* SceneDelegate.swift in Sources */,
 				349B277E29D5F9D400C30A17 /* SPADReading.swift in Sources */,
+				34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */,
 				349B278029D5FCBF00C30A17 /* SPADPost.swift in Sources */,
+				34B7A68D29DCB7F8005ECA4E /* CreateUserViewController.swift in Sources */,
+				34B7A68F29DCB813005ECA4E /* CreateUserViewModel.swift in Sources */,
+				34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */,
 				349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */,
 				349B278D29D60DDA00C30A17 /* User.swift in Sources */,
-				349B279229D615B100C30A17 /* TestingMockDataViewController.swift in Sources */,
-				349B279529D6170200C30A17 /* JFTMockModelController.swift in Sources */,
+				34B7A68A29DCB741005ECA4E /* UserSettingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
