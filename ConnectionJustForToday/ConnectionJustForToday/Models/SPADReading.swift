@@ -17,11 +17,11 @@ class SPADReading {
     let body: String
     let affirmation: String
     
-    init(date: String, title: String, quote: String, body: String, aspiration: String) {
+    init(date: String, title: String, quote: String, body: String, affirmation: String) {
         self.date = date
         self.title = title
         self.quote = quote
         self.body = body
-        self.affirmation = aspiration
+        self.affirmation = affirmation
     }
 }
