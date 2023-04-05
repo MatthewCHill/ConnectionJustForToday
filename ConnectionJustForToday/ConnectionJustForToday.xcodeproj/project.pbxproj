@@ -37,6 +37,7 @@
 		34B7A69B29DD0AEF005ECA4E /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69A29DD0AEF005ECA4E /* DequeModule */; };
 		34B7A69D29DD0AEF005ECA4E /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69C29DD0AEF005ECA4E /* OrderedCollections */; };
 		34B7A69F29DD0F17005ECA4E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A69E29DD0F17005ECA4E /* NetworkError.swift */; };
+		34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A6A029DDC852005ECA4E /* SPADService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34B7A69229DD0915005ECA4E /* JFTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTService.swift; sourceTree = "<group>"; };
 		34B7A69E29DD0F17005ECA4E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		34B7A6A029DDC852005ECA4E /* SPADService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				349B279729D6219F00C30A17 /* FirebaseService.swift */,
 				34B7A69229DD0915005ECA4E /* JFTService.swift */,
 				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
+				34B7A6A029DDC852005ECA4E /* SPADService.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */,
 				34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */,
+				34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */,
 				349B277629D5D80800C30A17 /* JFTReading.swift in Sources */,
 				34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */,
 				349B274129D4916F00C30A17 /* AppDelegate.swift in Sources */,

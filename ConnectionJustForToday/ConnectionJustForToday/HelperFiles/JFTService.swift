@@ -25,8 +25,8 @@ struct JFTService {
                         values.append(try el.text())
                     }
                     let keys = ["date", "title", "pageNumber", "quote", "reference", "body", "affirmation", "copyright"]
-                    let result = OrderedDictionary(uniqueKeysWithValues: zip(keys, values))
-                    let jftReading = JFTReading(date: result["date"] ?? "", title: result["title"] ?? "", pageNumber: result["pageNumber"] ?? "", quote: result["quote"] ?? "", reference: result["reference"] ?? "", body: result["body"] ?? "", afffirmation: result["affirmation"] ?? "", copyright: "copyright" )
+                    let result = Dictionary(uniqueKeysWithValues: zip(keys, values))
+                    guard let jftReading = JFTReading(fromDictionary: result) else { return }
                     completion(.success(jftReading))
                 }
             } catch {

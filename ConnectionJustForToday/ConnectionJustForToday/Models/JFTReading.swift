@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoKit
 
 // Model Object for Just For Today Meditation Reading
 
@@ -62,11 +63,9 @@ extension JFTReading {
               let reference = dictionary[Key.reference] as? String,
               let body = dictionary[Key.body] as? String,
               let affirmation = dictionary[Key.affirmation] as? String,
-              let copyright = dictionary[Key.copyright] as? String,
-              let postsJFT = dictionary[Key.postJFT] as? [JFTPost],
-              let uuid = dictionary[Key.uuid] as? String else { return nil }
+              let copyright = dictionary[Key.copyright] as? String else { return nil }
         
-        self.init(date: date, title: title, pageNumber: pageNumber, quote: quote, reference: reference, body: body, affirmation: affirmation, copyright: copyright, posts: postsJFT, uuid: uuid)
+        self.init(date: date, title: title, pageNumber: pageNumber, quote: quote, reference: reference, body: body, affirmation: affirmation, copyright: copyright)
     }
 }
 
