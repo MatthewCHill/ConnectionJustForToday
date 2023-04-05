@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Collections
+import SwiftSoup
 
 struct JFTService {
     

@@ -33,6 +33,9 @@
 		34B7A69129DCB8ED005ECA4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */; };
 		34B7A69329DD0915005ECA4E /* JFTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A69229DD0915005ECA4E /* JFTService.swift */; };
 		34B7A69629DD098A005ECA4E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69529DD098A005ECA4E /* SwiftSoup */; };
+		34B7A69929DD0AEF005ECA4E /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69829DD0AEF005ECA4E /* Collections */; };
+		34B7A69B29DD0AEF005ECA4E /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69A29DD0AEF005ECA4E /* DequeModule */; };
+		34B7A69D29DD0AEF005ECA4E /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69C29DD0AEF005ECA4E /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,10 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B7A69929DD0AEF005ECA4E /* Collections in Frameworks */,
 				349B278729D60AD400C30A17 /* FirebaseDatabase in Frameworks */,
 				349B278B29D60AD400C30A17 /* FirebaseStorage in Frameworks */,
+				34B7A69B29DD0AEF005ECA4E /* DequeModule in Frameworks */,
 				349B278529D60AD400C30A17 /* FirebaseAuth in Frameworks */,
 				349B278929D60AD400C30A17 /* FirebaseFirestore in Frameworks */,
+				34B7A69D29DD0AEF005ECA4E /* OrderedCollections in Frameworks */,
 				34B7A69629DD098A005ECA4E /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +214,9 @@
 				349B278829D60AD400C30A17 /* FirebaseFirestore */,
 				349B278A29D60AD400C30A17 /* FirebaseStorage */,
 				34B7A69529DD098A005ECA4E /* SwiftSoup */,
+				34B7A69829DD0AEF005ECA4E /* Collections */,
+				34B7A69A29DD0AEF005ECA4E /* DequeModule */,
+				34B7A69C29DD0AEF005ECA4E /* OrderedCollections */,
 			);
 			productName = ConnectionJustForToday;
 			productReference = 349B273D29D4916F00C30A17 /* ConnectionJustForToday.app */;
@@ -240,6 +249,7 @@
 			packageReferences = (
 				349B278329D60AD400C30A17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				34B7A69429DD098A005ECA4E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				34B7A69729DD0AEF005ECA4E /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 349B273E29D4916F00C30A17 /* Products */;
 			projectDirPath = "";
@@ -519,6 +529,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		34B7A69729DD0AEF005ECA4E /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -546,6 +564,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34B7A69429DD098A005ECA4E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		34B7A69829DD0AEF005ECA4E /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B7A69729DD0AEF005ECA4E /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		34B7A69A29DD0AEF005ECA4E /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B7A69729DD0AEF005ECA4E /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		34B7A69C29DD0AEF005ECA4E /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B7A69729DD0AEF005ECA4E /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
