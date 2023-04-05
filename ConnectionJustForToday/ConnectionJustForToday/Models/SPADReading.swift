@@ -19,6 +19,7 @@ class SPADReading {
         static let reference = "reference"
         static let body = "body"
         static let affirmation = "affirmation"
+        static let copryright = "copyright"
         static let uuid = "uuid"
         static let spadPosts = "spadPosts"
     }
@@ -30,10 +31,11 @@ class SPADReading {
     let reference: String
     let body: String
     let affirmation: String
+    let copyright: String
     let uuid: String
     let spadPosts: [SPADPost]
     
-    init(date: String, title: String, pageNumber: String, quote: String, reference: String, body: String, affirmation: String, uuid: String = UUID().uuidString, spadPosts: [SPADPost] = []) {
+    init(date: String, title: String, pageNumber: String, quote: String, reference: String, body: String, affirmation: String, copyright: String, uuid: String = UUID().uuidString, spadPosts: [SPADPost] = []) {
         self.date = date
         self.title = title
         self.pageNumber = pageNumber
@@ -41,6 +43,7 @@ class SPADReading {
         self.reference = reference
         self.body = body
         self.affirmation = affirmation
+        self.copyright = copyright
         self.uuid = uuid
         self.spadPosts = spadPosts
     }
@@ -56,9 +59,8 @@ extension SPADReading {
               let reference = dictionary[Key.reference] as? String,
               let body = dictionary[Key.body] as? String,
               let affirmation = dictionary[Key.affirmation] as? String,
-              let uuid = dictionary[Key.uuid] as? String,
-              let spadPosts = dictionary[Key.spadPosts] as? [SPADPost] else { return nil }
+              let copyright = dictionary[Key.copryright] as? String else { return nil }
         
-        self.init(date: date, title: title, pageNumber: pageNumber, quote: quote, reference: reference, body: body, affirmation: affirmation, uuid: uuid, spadPosts: spadPosts)
+        self.init(date: date, title: title, pageNumber: pageNumber, quote: quote, reference: reference, body: body, affirmation: affirmation, copyright: copyright)
     }
 }

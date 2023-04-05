@@ -7,12 +7,7 @@
 
 import UIKit
 
-class JFTReadingViewController: UIViewController, JFTReadingViewModelDelegate {
-    func scrapedReadingSuccessful() {
-        DispatchQueue.main.async {
-            self.updateUI()
-        }
-    }
+class JFTReadingViewController: UIViewController{
     
     
     // MARK: - Outlets
@@ -38,7 +33,7 @@ class JFTReadingViewController: UIViewController, JFTReadingViewModelDelegate {
     // MARK: - Functions
     
     func updateUI() {
-        guard let jft = viewModel.jftReading else {return}
+        guard let jft = viewModel.jftReading else { return }
         jftDateLabel.text = jft.date
         jftTitleLabel.text = jft.title
         jftQuoteLabel.text = jft.reference
@@ -48,11 +43,20 @@ class JFTReadingViewController: UIViewController, JFTReadingViewModelDelegate {
         jftCopyrightLabel.text = jft.copyright
     }
     
-
     // MARK: - Actions
     
     @IBAction func shareButtonTapped(_ sender: Any) {
     }
     
+} // End of class
+
+// MARK: - Extensions
+
+extension JFTReadingViewController: JFTReadingViewModelDelegate {
+    func scrapedReadingSuccessful() {
+        DispatchQueue.main.async {
+            self.updateUI()
+        }
+    }
 }
 

@@ -39,5 +39,6 @@ struct SPADService {
                 completion(.failure(.thrownError(error)))
             }
         }
+        task.resume()
     }
 }
