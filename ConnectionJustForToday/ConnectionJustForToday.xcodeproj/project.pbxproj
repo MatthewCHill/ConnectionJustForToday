@@ -145,8 +145,8 @@
 			children = (
 				349B279729D6219F00C30A17 /* FirebaseService.swift */,
 				34B7A69229DD0915005ECA4E /* JFTService.swift */,
-				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
 				34B7A6A029DDC852005ECA4E /* SPADService.swift */,
+				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
