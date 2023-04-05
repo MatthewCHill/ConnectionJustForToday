@@ -9,8 +9,6 @@ import UIKit
 
 class SPADReadingViewController: UIViewController{
     
-    
-    
     // MARK: - Outlets
     @IBOutlet weak var spadTitleLabel: UILabel!
     @IBOutlet weak var spadDateLabel: UILabel!

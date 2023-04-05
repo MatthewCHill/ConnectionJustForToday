@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mgy-jX-18F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WTQ-Dc-dyh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -95,6 +95,9 @@
                                 <color key="tintColor" systemColor="systemFillColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create"/>
+                                <connections>
+                                    <action selector="createUserButtonTapped:" destination="WTQ-Dc-dyh" eventType="touchUpInside" id="yzS-zK-2xh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uqe-yU-lkX"/>
@@ -116,6 +119,11 @@
                             <constraint firstItem="QH6-N5-Uqd" firstAttribute="top" secondItem="9aG-Ad-hos" secondAttribute="bottom" constant="30" id="uZO-tW-a7V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="rek-n4-lNL" id="8ou-OA-cX6"/>
+                        <outlet property="userEmailTextField" destination="gwH-Y8-vFO" id="xca-hv-fci"/>
+                        <outlet property="userPasswordTextField" destination="FYl-R9-3jy" id="S68-Nd-c9w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvX-yg-fuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

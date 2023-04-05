@@ -9,13 +9,26 @@ import UIKit
 
 class CreateUserViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var userEmailTextField: UITextField!
+    @IBOutlet weak var userPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    var viewModel: CreateUserViewModel!
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewModel = CreateUserViewModel()
     }
     
-
+// MARK: - Actions
+    @IBAction func createUserButtonTapped(_ sender: Any) {
+        guard let email = userEmailTextField.text,
+              let password = userPasswordTextField.text,
+              let confrimPassword = confirmPasswordTextField.text else { return }
+        
+        viewModel.createUser(email: email, password: password, confrimPassword: confrimPassword)
+    }
     /*
     // MARK: - Navigation
 
@@ -26,4 +39,4 @@ class CreateUserViewController: UIViewController {
     }
     */
 
-}
+} // End of class
