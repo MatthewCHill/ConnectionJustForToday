@@ -36,6 +36,7 @@
 		34B7A69929DD0AEF005ECA4E /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69829DD0AEF005ECA4E /* Collections */; };
 		34B7A69B29DD0AEF005ECA4E /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69A29DD0AEF005ECA4E /* DequeModule */; };
 		34B7A69D29DD0AEF005ECA4E /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69C29DD0AEF005ECA4E /* OrderedCollections */; };
+		34B7A69F29DD0F17005ECA4E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A69E29DD0F17005ECA4E /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
 		34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34B7A69229DD0915005ECA4E /* JFTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTService.swift; sourceTree = "<group>"; };
+		34B7A69E29DD0F17005ECA4E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				349B279729D6219F00C30A17 /* FirebaseService.swift */,
 				34B7A69229DD0915005ECA4E /* JFTService.swift */,
+				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */,
 				34B7A69329DD0915005ECA4E /* JFTService.swift in Sources */,
 				349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */,
+				34B7A69F29DD0F17005ECA4E /* NetworkError.swift in Sources */,
 				349B278D29D60DDA00C30A17 /* User.swift in Sources */,
 				34B7A68A29DCB741005ECA4E /* UserSettingViewModel.swift in Sources */,
 			);
