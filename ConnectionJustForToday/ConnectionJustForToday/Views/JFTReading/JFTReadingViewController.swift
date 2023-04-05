@@ -22,6 +22,7 @@ class JFTReadingViewController: UIViewController, JFTReadingViewModelDelegate {
     @IBOutlet weak var jftQuoteLabel: UILabel!
     @IBOutlet weak var jftAffirmationLabel: UILabel!
     @IBOutlet weak var jftBodyTextView: UITextView!
+    @IBOutlet weak var jftCopyrightLabel: UILabel!
     @IBOutlet weak var jftPostsTableView: UITableView!
     
     
@@ -44,6 +45,7 @@ class JFTReadingViewController: UIViewController, JFTReadingViewModelDelegate {
         jftQuoteLabel.text = jft.quote + jft.pageNumber
         jftBodyTextView.text = jft.body
         jftAffirmationLabel.text = jft.affirmation
+        jftCopyrightLabel.text = jft.copyright
     }
     
 
