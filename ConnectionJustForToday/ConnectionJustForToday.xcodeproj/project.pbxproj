@@ -31,6 +31,8 @@
 		34B7A68D29DCB7F8005ECA4E /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68C29DCB7F8005ECA4E /* CreateUserViewController.swift */; };
 		34B7A68F29DCB813005ECA4E /* CreateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */; };
 		34B7A69129DCB8ED005ECA4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */; };
+		34B7A69329DD0915005ECA4E /* JFTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A69229DD0915005ECA4E /* JFTService.swift */; };
+		34B7A69629DD098A005ECA4E /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69529DD098A005ECA4E /* SwiftSoup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,7 @@
 		34B7A68C29DCB7F8005ECA4E /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewModel.swift; sourceTree = "<group>"; };
 		34B7A69029DCB8ED005ECA4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34B7A69229DD0915005ECA4E /* JFTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 				349B278B29D60AD400C30A17 /* FirebaseStorage in Frameworks */,
 				349B278529D60AD400C30A17 /* FirebaseAuth in Frameworks */,
 				349B278929D60AD400C30A17 /* FirebaseFirestore in Frameworks */,
+				34B7A69629DD098A005ECA4E /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				349B279729D6219F00C30A17 /* FirebaseService.swift */,
+				34B7A69229DD0915005ECA4E /* JFTService.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				349B278629D60AD400C30A17 /* FirebaseDatabase */,
 				349B278829D60AD400C30A17 /* FirebaseFirestore */,
 				349B278A29D60AD400C30A17 /* FirebaseStorage */,
+				34B7A69529DD098A005ECA4E /* SwiftSoup */,
 			);
 			productName = ConnectionJustForToday;
 			productReference = 349B273D29D4916F00C30A17 /* ConnectionJustForToday.app */;
@@ -233,6 +239,7 @@
 			mainGroup = 349B273429D4916F00C30A17;
 			packageReferences = (
 				349B278329D60AD400C30A17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				34B7A69429DD098A005ECA4E /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 349B273E29D4916F00C30A17 /* Products */;
 			projectDirPath = "";
@@ -275,6 +282,7 @@
 				34B7A68D29DCB7F8005ECA4E /* CreateUserViewController.swift in Sources */,
 				34B7A68F29DCB813005ECA4E /* CreateUserViewModel.swift in Sources */,
 				34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */,
+				34B7A69329DD0915005ECA4E /* JFTService.swift in Sources */,
 				349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */,
 				349B278D29D60DDA00C30A17 /* User.swift in Sources */,
 				34B7A68A29DCB741005ECA4E /* UserSettingViewModel.swift in Sources */,
@@ -503,6 +511,14 @@
 				kind = branch;
 			};
 		};
+		34B7A69429DD098A005ECA4E /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -525,6 +541,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 349B278329D60AD400C30A17 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		34B7A69529DD098A005ECA4E /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34B7A69429DD098A005ECA4E /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
