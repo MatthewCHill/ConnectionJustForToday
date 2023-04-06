@@ -23,6 +23,7 @@ class JFTReadingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = JFTReadingViewModel(delegate: self)
+        jftPostsTableView.dataSource = self
     }
     
     // MARK: - Properties
@@ -44,6 +45,7 @@ class JFTReadingViewController: UIViewController{
     // MARK: - Actions
     
     @IBAction func shareButtonTapped(_ sender: Any) {
+        
     }
 } // End of class
 
@@ -55,6 +57,20 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
             self.updateUI()
         }
     }
+}
+
+extension JFTReadingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath)
+        
+        return cell
+    }
+    
+    
 }
 
 

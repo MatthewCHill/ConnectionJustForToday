@@ -18,7 +18,7 @@ class JFTPost {
         static let collectionType = "jftPosts"
     }
     
-    let post: String
+    var post: String
     var isControversial: Bool
     let uuid: String
     
