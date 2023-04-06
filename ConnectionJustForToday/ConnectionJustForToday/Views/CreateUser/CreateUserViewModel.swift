@@ -47,5 +47,4 @@ struct CreateUserViewModel {
             print("Error signing out", signOutError)
         }
     }
-    
 } // End of class

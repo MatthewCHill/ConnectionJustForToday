@@ -17,7 +17,7 @@ class SPADReadingViewController: UIViewController{
     @IBOutlet weak var spadAffirmationLabel: UILabel!
     @IBOutlet weak var spadCopyrightLabel: UILabel!
     @IBOutlet weak var spadPostTableView: UITableView!
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,6 @@ class SPADReadingViewController: UIViewController{
         spadAffirmationLabel.text = spad.affirmation
         spadCopyrightLabel.text = spad.copyright
     }
-    
 } // End of class
 
 // MARK: - Extension
@@ -49,6 +48,4 @@ extension SPADReadingViewController: SpadReadingViewModelDelegate {
             self.updateUI()
         }
     }
-    
-    
 }

@@ -33,7 +33,6 @@ class SPADPost {
         self.isControversial = isControversial
         self.uuid = uuid
     }
-
 }
 
 extension SPADPost {

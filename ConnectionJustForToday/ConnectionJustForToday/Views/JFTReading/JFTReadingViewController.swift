@@ -9,7 +9,6 @@ import UIKit
 
 class JFTReadingViewController: UIViewController{
     
-    
     // MARK: - Outlets
     
     @IBOutlet weak var jftTitleLabel: UILabel!
@@ -19,7 +18,6 @@ class JFTReadingViewController: UIViewController{
     @IBOutlet weak var jftBodyTextView: UITextView!
     @IBOutlet weak var jftCopyrightLabel: UILabel!
     @IBOutlet weak var jftPostsTableView: UITableView!
-    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -47,7 +45,6 @@ class JFTReadingViewController: UIViewController{
     
     @IBAction func shareButtonTapped(_ sender: Any) {
     }
-    
 } // End of class
 
 // MARK: - Extensions

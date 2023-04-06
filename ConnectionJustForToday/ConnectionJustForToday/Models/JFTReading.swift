@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CryptoKit
 
 // Model Object for Just For Today Meditation Reading
 
@@ -24,7 +23,6 @@ class JFTReading {
         static let postJFT = "postsJFT"
         static let uuid = "uuid"
     }
-    
     
     // MARK: - Properties
     var date: String

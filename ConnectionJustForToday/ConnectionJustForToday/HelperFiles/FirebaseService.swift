@@ -14,7 +14,6 @@ enum FirebaseError: Error {
     case noDataFound
 }
 
-
 struct FirebaseService {
     
     let ref = Firestore.firestore()

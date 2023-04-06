@@ -8,7 +8,7 @@
 import UIKit
 
 class CreateUserViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
@@ -21,7 +21,7 @@ class CreateUserViewController: UIViewController {
         viewModel = CreateUserViewModel()
     }
     
-// MARK: - Actions
+    // MARK: - Actions
     @IBAction func createUserButtonTapped(_ sender: Any) {
         guard let email = userEmailTextField.text,
               let password = userPasswordTextField.text,
@@ -29,14 +29,4 @@ class CreateUserViewController: UIViewController {
         
         viewModel.createUser(email: email, password: password, confrimPassword: confrimPassword)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 } // End of class

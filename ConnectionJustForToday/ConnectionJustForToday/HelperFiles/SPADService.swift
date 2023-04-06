@@ -18,7 +18,6 @@ struct SPADService {
                 if let html = String(data: data, encoding: .utf8),
                    let doc = try? SwiftSoup.parse(html) {
                     let elements = try doc.select(".spad-rendered-element div")
-                    
                     var values = [String]()
                     for el in elements {
                         if el.id() == "spad-divider" {
@@ -27,12 +26,10 @@ struct SPADService {
                             values.append(try el.text())
                         }
                     }
-                    
                     let keys = ["date", "title", "pageNumber", "quote", "reference", "body", "affirmation", "copyright"]
                     let result = Dictionary(uniqueKeysWithValues: zip(keys, values))
                     guard let spadReading = SPADReading(fromDictionary: result) else { completion(.failure(.unableToDecode)); return}
                     completion(.success(spadReading))
-                    
                 }
             } catch {
                 print(error.localizedDescription)

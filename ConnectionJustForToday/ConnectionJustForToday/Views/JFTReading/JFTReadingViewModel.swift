@@ -26,7 +26,7 @@ class JFTReadingViewModel {
     
     // MARK: - Functions
     
-     func fetchJFTReading() {
+    func fetchJFTReading() {
         service.scrapeJFT { [weak self] result in
             switch result {
                 
