@@ -52,6 +52,10 @@ class JFTReadingViewController: UIViewController{
 // MARK: - Extensions
 
 extension JFTReadingViewController: JFTReadingViewModelDelegate {
+    func postsLoadedSuccessfully() {
+        self.jftPostsTableView.reloadData()
+    }
+    
     func scrapedReadingSuccessful() {
         DispatchQueue.main.async {
             self.updateUI()
@@ -61,7 +65,7 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
 
 extension JFTReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.jftPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

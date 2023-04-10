@@ -43,8 +43,8 @@ struct FirebaseService {
         }
     }
     
-    func createSPADPost(post: String, isControversial: Bool, uuid: String) {
-        let post = SPADPost(post: post, isControversial: isControversial, uuid: uuid)
+    func createSPADPost(post: String, isControversial: Bool) {
+        let post = SPADPost(post: post, isControversial: isControversial)
         ref.collection(SPADPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     

@@ -1,29 +1,32 @@
 //
-//  JFTPostViewController.swift
+//  SPADPostViewController.swift
 //  ConnectionJustForToday
 //
-//  Created by Matthew Hill on 4/6/23.
+//  Created by Matthew Hill on 4/10/23.
 //
 
 import UIKit
 
-class JFTPostViewController: UIViewController {
+class SPADPostViewController: UIViewController {
+    
     
     // MARK: - Outlets
-    @IBOutlet weak var jftPostTextView: UITextView!
+
+    @IBOutlet weak var spadBodyTextView: UITextView!
     
     // MARK: - Propeties
-    var viewModel: JFTPostViewModel!
+    var viewModel: SPADPostViewModel!
     
-// MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = JFTPostViewModel(delegate: self)
+        viewModel = SPADPostViewModel(delegate: self)
     }
     
-    // MARK: - Functions
+    // MARK: - functions
+    
     func updateUI() {
-        guard let post = jftPostTextView.text else {return}
+        guard let post = spadBodyTextView.text else {return}
         viewModel.savePost(postBody: post)
     }
     
@@ -31,13 +34,13 @@ class JFTPostViewController: UIViewController {
     @IBAction func shareButtonTapped(_ sender: Any) {
         updateUI()
     }
-}
+} // End of class
 
 // MARK: - Extensions
 
-extension JFTPostViewController: JFTPostViewModelDelegate {
+extension SPADPostViewController: SPADPostViewModelDelegate {
     func postSuccessfullySaved() {
         self.navigationController?.popViewController(animated: true)
     }
-}
     
+}

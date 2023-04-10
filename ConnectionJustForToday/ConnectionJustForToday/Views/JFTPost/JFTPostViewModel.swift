@@ -16,7 +16,7 @@ class JFTPostViewModel {
     
     let service: FirebaseService
     var delegate: JFTPostViewModelDelegate?
-    var jftPost: JFTPost?
+    var jftPosts: JFTPost?
     
     init(service: FirebaseService = FirebaseService(), delegate: JFTPostViewModelDelegate) {
         self.service = service
@@ -29,7 +29,5 @@ class JFTPostViewModel {
             jftPost.isControversial = isControversial
             service.createJFTPost(post: postBody, isControversial: isControversial)
             delegate?.postSuccessfullySaved()
-        
     }
-    
 }
