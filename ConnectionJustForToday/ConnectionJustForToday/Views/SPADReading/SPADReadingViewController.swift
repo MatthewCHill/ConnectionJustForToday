@@ -22,6 +22,7 @@ class SPADReadingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SPADReadingViewModel(delegate: self)
+        spadPostTableView.dataSource = self
     }
     
     // MARK: - Properties
@@ -43,9 +44,27 @@ class SPADReadingViewController: UIViewController{
 // MARK: - Extension
 
 extension SPADReadingViewController: SpadReadingViewModelDelegate {
+    func postsLoadedSuccessfully() {
+        self.spadPostTableView.reloadData()
+    }
+    
     func scrapedReadingSuccessful() {
         DispatchQueue.main.async {
             self.updateUI()
         }
     }
+}
+
+extension SPADReadingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.spadPosts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "spadPost", for: indexPath)
+        
+        return cell
+    }
+    
+    
 }

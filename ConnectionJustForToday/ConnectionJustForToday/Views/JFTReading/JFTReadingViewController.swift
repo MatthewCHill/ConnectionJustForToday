@@ -41,12 +41,6 @@ class JFTReadingViewController: UIViewController{
         jftAffirmationLabel.text = jft.affirmation
         jftCopyrightLabel.text = jft.copyright
     }
-    
-    // MARK: - Actions
-    
-    @IBAction func shareButtonTapped(_ sender: Any) {
-        
-    }
 } // End of class
 
 // MARK: - Extensions
