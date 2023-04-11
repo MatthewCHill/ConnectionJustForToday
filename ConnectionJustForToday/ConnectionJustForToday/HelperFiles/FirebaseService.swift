@@ -67,4 +67,4 @@ struct FirebaseService {
             completion(.success(posts))
         }
     }
-}
+} // End of class
