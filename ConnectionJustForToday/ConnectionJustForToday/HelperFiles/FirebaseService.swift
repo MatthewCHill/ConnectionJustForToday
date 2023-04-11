@@ -48,7 +48,6 @@ struct FirebaseService {
         ref.collection(SPADPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     
-    
     func loadSPADPost(completion: @escaping (Result<[SPADPost], FirebaseError>) -> Void) {
         ref.collection(SPADPost.Key.collectionType).getDocuments { snapshot, error in
             if let error = error {
@@ -67,4 +66,10 @@ struct FirebaseService {
             completion(.success(posts))
         }
     }
+    
+    func saveUserSetting(userName: String, cleanDate: Date, country: String) {
+        let user = User(name: userName, cleanDate: cleanDate, country: country)
+        ref.collection(User.Key.collectionType).document(user.uuid).setData(user.dictionaryRepresentation)
+    }
+    
 } // End of class
