@@ -72,4 +72,23 @@ struct FirebaseService {
         ref.collection(User.Key.collectionType).document(user.uuid).setData(user.dictionaryRepresentation)
     }
     
+    func fetchUserInfo(completion: @escaping(Result<User, FirebaseError>) -> Void) {
+        ref.collection(User.Key.collectionType).getDocuments { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(.failure(.firebaseError(error)))
+                return
+            }
+            
+            guard let data = snapshot?.documents else {
+                completion(.failure(.noDataFound))
+                return
+            }
+            let dictionaryArray = data.compactMap { $0.data() }
+            let users = dictionaryArray.compactMap { User(fromDictionary: $0)}
+            guard let user = users.first else {return}
+            completion(.success(user))
+        }
+    }
+    
 } // End of class
