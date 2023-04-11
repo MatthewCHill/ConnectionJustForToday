@@ -22,6 +22,8 @@
 		349B278B29D60AD400C30A17 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 349B278A29D60AD400C30A17 /* FirebaseStorage */; };
 		349B278D29D60DDA00C30A17 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B278C29D60DDA00C30A17 /* User.swift */; };
 		349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279729D6219F00C30A17 /* FirebaseService.swift */; };
+		34A17B0D29DF52B100945269 /* JFTPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A17B0C29DF52B100945269 /* JFTPostViewController.swift */; };
+		34A17B0F29DF52C100945269 /* JFTPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */; };
 		34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */; };
 		34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */; };
 		34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */; };
@@ -38,6 +40,8 @@
 		34B7A69D29DD0AEF005ECA4E /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 34B7A69C29DD0AEF005ECA4E /* OrderedCollections */; };
 		34B7A69F29DD0F17005ECA4E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A69E29DD0F17005ECA4E /* NetworkError.swift */; };
 		34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A6A029DDC852005ECA4E /* SPADService.swift */; };
+		34C30D4529E47CF200021480 /* SPADPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C30D4429E47CF200021480 /* SPADPostViewController.swift */; };
+		34C30D4729E47D0400021480 /* SpadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C30D4629E47D0400021480 /* SpadPostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,8 @@
 		349B277F29D5FCBF00C30A17 /* SPADPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADPost.swift; sourceTree = "<group>"; };
 		349B278C29D60DDA00C30A17 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		349B279729D6219F00C30A17 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		34A17B0C29DF52B100945269 /* JFTPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostViewController.swift; sourceTree = "<group>"; };
+		34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostViewModel.swift; sourceTree = "<group>"; };
 		34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewModel.swift; sourceTree = "<group>"; };
@@ -66,6 +72,8 @@
 		34B7A69229DD0915005ECA4E /* JFTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTService.swift; sourceTree = "<group>"; };
 		34B7A69E29DD0F17005ECA4E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		34B7A6A029DDC852005ECA4E /* SPADService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADService.swift; sourceTree = "<group>"; };
+		34C30D4429E47CF200021480 /* SPADPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADPostViewController.swift; sourceTree = "<group>"; };
+		34C30D4629E47D0400021480 /* SpadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpadPostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,9 +159,20 @@
 			path = HelperFiles;
 			sourceTree = "<group>";
 		};
+		34A17B0B29DF529B00945269 /* JFTPost */ = {
+			isa = PBXGroup;
+			children = (
+				34A17B0C29DF52B100945269 /* JFTPostViewController.swift */,
+				34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */,
+			);
+			path = JFTPost;
+			sourceTree = "<group>";
+		};
 		34B7A67729DCB62C005ECA4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34C30D4329E47C2000021480 /* SpadPost */,
+				34A17B0B29DF529B00945269 /* JFTPost */,
 				34B7A68B29DCB7E0005ECA4E /* CreateUser */,
 				34B7A68629DCB707005ECA4E /* UserSetting */,
 				34B7A67F29DCB6AA005ECA4E /* SPADReading */,
@@ -196,6 +215,15 @@
 				34B7A68E29DCB813005ECA4E /* CreateUserViewModel.swift */,
 			);
 			path = CreateUser;
+			sourceTree = "<group>";
+		};
+		34C30D4329E47C2000021480 /* SpadPost */ = {
+			isa = PBXGroup;
+			children = (
+				34C30D4429E47CF200021480 /* SPADPostViewController.swift */,
+				34C30D4629E47D0400021480 /* SpadPostViewModel.swift */,
+			);
+			path = SpadPost;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,13 +313,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C30D4529E47CF200021480 /* SPADPostViewController.swift in Sources */,
+				34A17B0F29DF52C100945269 /* JFTPostViewModel.swift in Sources */,
 				34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */,
 				34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */,
 				34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */,
 				349B277629D5D80800C30A17 /* JFTReading.swift in Sources */,
 				34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */,
+				34C30D4729E47D0400021480 /* SpadPostViewModel.swift in Sources */,
 				349B274129D4916F00C30A17 /* AppDelegate.swift in Sources */,
 				349B277929D5D94000C30A17 /* JFTPost.swift in Sources */,
+				34A17B0D29DF52B100945269 /* JFTPostViewController.swift in Sources */,
 				349B274329D4916F00C30A17 /* SceneDelegate.swift in Sources */,
 				349B277E29D5F9D400C30A17 /* SPADReading.swift in Sources */,
 				34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */,

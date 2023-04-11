@@ -23,6 +23,7 @@ class JFTReadingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = JFTReadingViewModel(delegate: self)
+        jftPostsTableView.dataSource = self
     }
     
     // MARK: - Properties
@@ -40,20 +41,35 @@ class JFTReadingViewController: UIViewController{
         jftAffirmationLabel.text = jft.affirmation
         jftCopyrightLabel.text = jft.copyright
     }
-    
-    // MARK: - Actions
-    
-    @IBAction func shareButtonTapped(_ sender: Any) {
-    }
 } // End of class
 
 // MARK: - Extensions
 
 extension JFTReadingViewController: JFTReadingViewModelDelegate {
+    func postsLoadedSuccessfully() {
+        self.jftPostsTableView.reloadData()
+    }
+    
     func scrapedReadingSuccessful() {
         DispatchQueue.main.async {
             self.updateUI()
         }
     }
 }
+
+extension JFTReadingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.jftPosts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath)
+        
+        return cell
+    }
+    
+    
+}
+
+
 

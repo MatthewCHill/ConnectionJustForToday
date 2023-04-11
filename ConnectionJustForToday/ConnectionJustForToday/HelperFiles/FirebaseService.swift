@@ -18,9 +18,9 @@ struct FirebaseService {
     
     let ref = Firestore.firestore()
     
-    func createJFTPost(post: String, isControversial: Bool, uuid: String) {
+    func createJFTPost(post: String, isControversial: Bool) {
         
-        let post = JFTPost(post: post, isControversial: isControversial, uuid: uuid)
+        let post = JFTPost(post: post, isControversial: isControversial)
         ref.collection(JFTPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     
@@ -43,11 +43,10 @@ struct FirebaseService {
         }
     }
     
-    func createSPADPost(post: String, isControversial: Bool, uuid: String) {
-        let post = SPADPost(post: post, isControversial: isControversial, uuid: uuid)
+    func createSPADPost(post: String, isControversial: Bool) {
+        let post = SPADPost(post: post, isControversial: isControversial)
         ref.collection(SPADPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
-    
     
     func loadSPADPost(completion: @escaping (Result<[SPADPost], FirebaseError>) -> Void) {
         ref.collection(SPADPost.Key.collectionType).getDocuments { snapshot, error in
@@ -67,4 +66,29 @@ struct FirebaseService {
             completion(.success(posts))
         }
     }
-}
+    
+    func saveUserSetting(userName: String, cleanDate: Date, country: String) {
+        let user = User(name: userName, cleanDate: cleanDate, country: country)
+        ref.collection(User.Key.collectionType).document(user.uuid).setData(user.dictionaryRepresentation)
+    }
+    
+    func fetchUserInfo(completion: @escaping(Result<User, FirebaseError>) -> Void) {
+        ref.collection(User.Key.collectionType).getDocuments { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(.failure(.firebaseError(error)))
+                return
+            }
+            
+            guard let data = snapshot?.documents else {
+                completion(.failure(.noDataFound))
+                return
+            }
+            let dictionaryArray = data.compactMap { $0.data() }
+            let users = dictionaryArray.compactMap { User(fromDictionary: $0)}
+            guard let user = users.first else {return}
+            completion(.success(user))
+        }
+    }
+    
+} // End of class

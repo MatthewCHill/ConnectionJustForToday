@@ -16,7 +16,7 @@ class SPADPost {
         static let collectionType = "spadPosts"
     }
     
-    let post: String
+    var post: String
     var isControversial: Bool
     let uuid: String
     

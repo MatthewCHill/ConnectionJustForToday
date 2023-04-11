@@ -9,19 +9,24 @@ import Foundation
 
 protocol JFTReadingViewModelDelegate: AnyObject {
     func scrapedReadingSuccessful()
+    func postsLoadedSuccessfully()
 }
 
 class JFTReadingViewModel {
     
     // MARK: - Properties
     var jftReading: JFTReading?
+    var jftPosts: [JFTPost] = []
     private var service: JFTService
+    private var firebaseService: FirebaseService
     private weak var delegate: JFTReadingViewModelDelegate?
     
-    init(service: JFTService = JFTService(), delegate: JFTReadingViewModelDelegate) {
+    init(service: JFTService = JFTService(), firebaseService: FirebaseService = FirebaseService(), delegate: JFTReadingViewModelDelegate) {
         self.service = service
+        self.firebaseService = firebaseService
         self.delegate = delegate
         self.fetchJFTReading()
+        self.loadPosts()
     }
     
     // MARK: - Functions
@@ -38,4 +43,17 @@ class JFTReadingViewModel {
             }
         }
     }
-}
+    
+    func loadPosts() {
+        firebaseService.loadJFTPost { [weak self] result in
+            switch result {
+                
+            case .success(let posts):
+                self?.jftPosts = posts
+                self?.delegate?.postsLoadedSuccessfully()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+} // End of Class

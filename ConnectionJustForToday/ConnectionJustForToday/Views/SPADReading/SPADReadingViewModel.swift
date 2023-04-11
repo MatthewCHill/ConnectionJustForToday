@@ -9,19 +9,24 @@ import Foundation
 
 protocol SpadReadingViewModelDelegate: AnyObject {
     func scrapedReadingSuccessful()
+    func postsLoadedSuccessfully()
 }
 
 class SPADReadingViewModel {
     
     // MARK: - Properties
     var spadReading: SPADReading?
+    var spadPosts: [SPADPost] = []
     private var service: SPADService
+    private var firebaseService: FirebaseService
     private weak var delegate: SpadReadingViewModelDelegate?
     
-    init(service: SPADService = SPADService(), delegate: SpadReadingViewModelDelegate) {
+    init(service: SPADService = SPADService(), firbaseService: FirebaseService = FirebaseService(), delegate: SpadReadingViewModelDelegate) {
         self.service = service
+        self.firebaseService = firbaseService
         self.delegate = delegate
         self.fetchJFTReading()
+        self.fetchPosts()
     }
     
     // MARK: - Functions
@@ -38,4 +43,17 @@ class SPADReadingViewModel {
             }
         }
     }
-}
+    
+    func fetchPosts() {
+        firebaseService.loadSPADPost { [weak self] result in
+            switch result {
+                
+            case .success(let posts):
+                self?.spadPosts = posts
+                self?.delegate?.postsLoadedSuccessfully()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+} // End Of Class
