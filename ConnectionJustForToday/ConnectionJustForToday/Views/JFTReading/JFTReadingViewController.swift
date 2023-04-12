@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
 class JFTReadingViewController: UIViewController{
     
@@ -41,6 +44,12 @@ class JFTReadingViewController: UIViewController{
         jftAffirmationLabel.text = jft.affirmation
         jftCopyrightLabel.text = jft.copyright
     }
+    
+    // MARK: - Actions
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        viewModel.user.signOut()
+        navigationController?.popViewController(animated: true)
+    }
 } // End of class
 
 // MARK: - Extensions
@@ -67,9 +76,8 @@ extension JFTReadingViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
+
 
 
 

@@ -67,7 +67,7 @@ struct FirebaseService {
         }
     }
     
-    func saveUserSetting(userName: String, cleanDate: Date, country: String) {
+    func saveUserSetting(userName: String, cleanDate: String, country: String) {
         let user = User(name: userName, cleanDate: cleanDate, country: country)
         ref.collection(User.Key.collectionType).document(user.uuid).setData(user.dictionaryRepresentation)
     }

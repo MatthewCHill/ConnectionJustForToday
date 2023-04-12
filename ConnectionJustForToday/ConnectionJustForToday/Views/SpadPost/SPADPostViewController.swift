@@ -9,7 +9,6 @@ import UIKit
 
 class SPADPostViewController: UIViewController {
     
-    
     // MARK: - Outlets
 
     @IBOutlet weak var spadBodyTextView: UITextView!
@@ -42,5 +41,4 @@ extension SPADPostViewController: SPADPostViewModelDelegate {
     func postSuccessfullySaved() {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }

@@ -15,7 +15,7 @@ struct JFTService {
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {completion(.failure(.noData)); return}
             do {
-                if let html = String(data: data, encoding: .utf8),
+                if let html = String(data: data, encoding: .isoLatin1),
                    let doc = try? SwiftSoup.parse(html) {
                     let tdElements = try doc.select("body td")
                     

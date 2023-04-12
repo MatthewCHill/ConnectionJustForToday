@@ -18,11 +18,13 @@ class JFTReadingViewModel {
     var jftReading: JFTReading?
     var jftPosts: [JFTPost] = []
     private var service: JFTService
+    var user: CreateUserViewModel
     private var firebaseService: FirebaseService
     private weak var delegate: JFTReadingViewModelDelegate?
     
-    init(service: JFTService = JFTService(), firebaseService: FirebaseService = FirebaseService(), delegate: JFTReadingViewModelDelegate) {
+    init(service: JFTService = JFTService(), user: CreateUserViewModel = CreateUserViewModel(), firebaseService: FirebaseService = FirebaseService(), delegate: JFTReadingViewModelDelegate) {
         self.service = service
+        self.user = user
         self.firebaseService = firebaseService
         self.delegate = delegate
         self.fetchJFTReading()

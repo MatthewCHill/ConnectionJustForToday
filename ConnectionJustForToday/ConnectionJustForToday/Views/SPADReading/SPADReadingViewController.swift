@@ -36,7 +36,7 @@ class SPADReadingViewController: UIViewController{
         spadDateLabel.text = spad.date
         spadQuoteLabel.text = spad.quote
         spadBodyTextView.text = spad.body
-        spadAffirmationLabel.text = spad.affirmation
+        spadAffirmationLabel.text = "Just For Today: \(spad.affirmation)"
         spadCopyrightLabel.text = spad.copyright
     }
 } // End of class
