@@ -15,7 +15,8 @@ struct JFTService {
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {completion(.failure(.noData)); return}
             do {
-                if let html = String(data: data, encoding: .isoLatin1),
+                let sanitizedData = self.sanitizeData(data)
+                if let html = String(data: sanitizedData, encoding: .isoLatin1),
                    let doc = try? SwiftSoup.parse(html) {
                     let tdElements = try doc.select("body td")
                     
@@ -35,4 +36,21 @@ struct JFTService {
         }
         task.resume()
     }
+    
+    func sanitizeData(_ data: Data) -> Data {
+            var sanitizedData = Data()
+            var utf8Decoder = UTF8()
+            var iterator = data.makeIterator()
+
+        Decode: while true {
+                switch utf8Decoder.decode(&iterator) {
+                case .scalarValue(let scalar): sanitizedData.append(contentsOf: scalar.utf8)
+                case .emptyInput: break Decode
+                case .error:
+                    print("Decoding error")
+                    break Decode
+                }
+            }
+            return sanitizedData
+        }
 }

@@ -42,6 +42,8 @@
 		34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A6A029DDC852005ECA4E /* SPADService.swift */; };
 		34C30D4529E47CF200021480 /* SPADPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C30D4429E47CF200021480 /* SPADPostViewController.swift */; };
 		34C30D4729E47D0400021480 /* SpadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C30D4629E47D0400021480 /* SpadPostViewModel.swift */; };
+		34C30D4E29E7145900021480 /* JFTPostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C30D4D29E7145900021480 /* JFTPostCellViewModel.swift */; };
+		34C30D5029E7147C00021480 /* JFTPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C30D4F29E7147C00021480 /* JFTPostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		34B7A6A029DDC852005ECA4E /* SPADService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADService.swift; sourceTree = "<group>"; };
 		34C30D4429E47CF200021480 /* SPADPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADPostViewController.swift; sourceTree = "<group>"; };
 		34C30D4629E47D0400021480 /* SpadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpadPostViewModel.swift; sourceTree = "<group>"; };
+		34C30D4D29E7145900021480 /* JFTPostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostCellViewModel.swift; sourceTree = "<group>"; };
+		34C30D4F29E7147C00021480 /* JFTPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 			children = (
 				34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */,
 				34B7A68429DCB700005ECA4E /* JFTReadingViewModel.swift */,
+				34C30D4829E713BC00021480 /* CustomCell */,
 			);
 			path = JFTReading;
 			sourceTree = "<group>";
@@ -224,6 +229,15 @@
 				34C30D4629E47D0400021480 /* SpadPostViewModel.swift */,
 			);
 			path = SpadPost;
+			sourceTree = "<group>";
+		};
+		34C30D4829E713BC00021480 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				34C30D4F29E7147C00021480 /* JFTPostTableViewCell.swift */,
+				34C30D4D29E7145900021480 /* JFTPostCellViewModel.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +335,9 @@
 				349B277629D5D80800C30A17 /* JFTReading.swift in Sources */,
 				34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */,
 				34C30D4729E47D0400021480 /* SpadPostViewModel.swift in Sources */,
+				34C30D4E29E7145900021480 /* JFTPostCellViewModel.swift in Sources */,
 				349B274129D4916F00C30A17 /* AppDelegate.swift in Sources */,
+				34C30D5029E7147C00021480 /* JFTPostTableViewCell.swift in Sources */,
 				349B277929D5D94000C30A17 /* JFTPost.swift in Sources */,
 				34A17B0D29DF52B100945269 /* JFTPostViewController.swift in Sources */,
 				349B274329D4916F00C30A17 /* SceneDelegate.swift in Sources */,
