@@ -18,9 +18,9 @@ struct FirebaseService {
     
     let ref = Firestore.firestore()
     
-    func createJFTPost(post: String, isControversial: Bool) {
+    func createJFTPost(post: String, displayName: String, country: String, isControversial: Bool) {
         
-        let post = JFTPost(post: post, isControversial: isControversial)
+        let post = JFTPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
         ref.collection(JFTPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     
@@ -43,8 +43,8 @@ struct FirebaseService {
         }
     }
     
-    func createSPADPost(post: String, isControversial: Bool) {
-        let post = SPADPost(post: post, isControversial: isControversial)
+    func createSPADPost(post: String, displayName: String, country: String,isControversial: Bool) {
+        let post = SPADPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
         ref.collection(SPADPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     
