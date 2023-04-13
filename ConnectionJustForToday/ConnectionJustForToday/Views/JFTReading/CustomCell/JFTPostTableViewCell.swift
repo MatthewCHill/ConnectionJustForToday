@@ -8,7 +8,7 @@
 import UIKit
 
 class JFTPostTableViewCell: UITableViewCell {
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var isControversialButton: UIButton!
