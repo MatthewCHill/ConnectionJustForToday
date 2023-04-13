@@ -11,6 +11,8 @@ class JFTPostViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var jftPostTextView: UITextView!
+    @IBOutlet weak var displayNameTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
     
     // MARK: - Propeties
     var viewModel: JFTPostViewModel!
@@ -23,8 +25,10 @@ class JFTPostViewController: UIViewController {
     
     // MARK: - Functions
     func updateUI() {
-        guard let post = jftPostTextView.text else {return}
-        viewModel.savePost(postBody: post)
+        guard let post = jftPostTextView.text,
+        let displayName = displayNameTextField.text,
+        let country = countryTextField.text else {return}
+        viewModel.savePost(postBody: post, displayName: displayName, country: country)
     }
     
     // MARK: - Actions

@@ -42,13 +42,17 @@ struct JFTService {
             var utf8Decoder = UTF8()
             var iterator = data.makeIterator()
 
-        Decode: while true {
+            Decode: while true {
                 switch utf8Decoder.decode(&iterator) {
-                case .scalarValue(let scalar): sanitizedData.append(contentsOf: scalar.utf8)
-                case .emptyInput: break Decode
+                case .scalarValue(let scalar):
+                    sanitizedData.append(contentsOf: scalar.utf8)
+                case .emptyInput:
+                    break Decode
                 case .error:
                     print("Decoding error")
-                    break Decode
+                    let replacementCharacter = UnicodeScalar(0xFFFD)!
+                    sanitizedData.append(contentsOf: replacementCharacter.utf8)
+                    utf8Decoder = UTF8()
                 }
             }
             return sanitizedData

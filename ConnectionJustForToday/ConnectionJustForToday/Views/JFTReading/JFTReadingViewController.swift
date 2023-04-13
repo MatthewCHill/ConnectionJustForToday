@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseCore
-import FirebaseFirestore
 
 class JFTReadingViewController: UIViewController{
     
@@ -29,6 +26,11 @@ class JFTReadingViewController: UIViewController{
         jftPostsTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.loadPosts()
+    }
+    
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
     
@@ -43,12 +45,6 @@ class JFTReadingViewController: UIViewController{
         jftBodyTextView.text = jft.body
         jftAffirmationLabel.text = jft.affirmation
         jftCopyrightLabel.text = jft.copyright
-    }
-    
-    // MARK: - Actions
-    @IBAction func signOutButtonTapped(_ sender: Any) {
-        viewModel.user.signOut()
-        navigationController?.popViewController(animated: true)
     }
 } // End of class
 
@@ -74,6 +70,8 @@ extension JFTReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath) as? JFTPostTableViewCell else {return UITableViewCell()}
         
+        let post = viewModel.jftPosts[indexPath.row]
+        cell.updateUI(with: post)
         return cell
     }
 }

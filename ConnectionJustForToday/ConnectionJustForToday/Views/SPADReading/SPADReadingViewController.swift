@@ -25,6 +25,11 @@ class SPADReadingViewController: UIViewController{
         spadPostTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchPosts()
+    }
+    
     // MARK: - Properties
     var viewModel: SPADReadingViewModel!
     
@@ -61,10 +66,10 @@ extension SPADReadingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "spadPost", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "spadPost", for: indexPath) as? SpadPostTableViewCell else {return UITableViewCell()}
         
+        let post = viewModel.spadPosts[indexPath.row]
+        cell.updateUI(for: post)
         return cell
     }
-    
-    
 }

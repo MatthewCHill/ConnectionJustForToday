@@ -60,7 +60,6 @@ class UserSettingsViewController: UIViewController {
         viewModel.saveUserSettings(userName: userName, userCountry: userCountry, cleandDate: userCleanDate)
     }
     
-    
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         updateUI()

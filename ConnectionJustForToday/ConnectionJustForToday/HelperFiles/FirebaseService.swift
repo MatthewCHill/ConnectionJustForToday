@@ -18,6 +18,7 @@ struct FirebaseService {
     
     let ref = Firestore.firestore()
     
+    // MARK: - JFT Functions
     func createJFTPost(post: String, displayName: String, country: String, isControversial: Bool) {
         
         let post = JFTPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
@@ -43,6 +44,7 @@ struct FirebaseService {
         }
     }
     
+    // MARK: - SPAD Functions
     func createSPADPost(post: String, displayName: String, country: String,isControversial: Bool) {
         let post = SPADPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
         ref.collection(SPADPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
@@ -67,6 +69,7 @@ struct FirebaseService {
         }
     }
     
+    // MARK: - User functions
     func saveUserSetting(userName: String, cleanDate: String, country: String) {
         let user = User(name: userName, cleanDate: cleanDate, country: country)
         ref.collection(User.Key.collectionType).document(user.uuid).setData(user.dictionaryRepresentation)
