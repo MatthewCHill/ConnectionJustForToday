@@ -9,10 +9,11 @@ import UIKit
 
 class SPADPostViewController: UIViewController {
     
-    
     // MARK: - Outlets
-
+    
     @IBOutlet weak var spadBodyTextView: UITextView!
+    @IBOutlet weak var displayNameTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
     
     // MARK: - Propeties
     var viewModel: SPADPostViewModel!
@@ -26,8 +27,10 @@ class SPADPostViewController: UIViewController {
     // MARK: - functions
     
     func updateUI() {
-        guard let post = spadBodyTextView.text else {return}
-        viewModel.savePost(postBody: post)
+        guard let post = spadBodyTextView.text,
+        let displayName = displayNameTextField.text,
+        let country = countryTextField.text else {return}
+        viewModel.savePost(postBody: post, displayName: displayName, country: country)
     }
     
     // MARK: - Actions
@@ -42,5 +45,4 @@ extension SPADPostViewController: SPADPostViewModelDelegate {
     func postSuccessfullySaved() {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }

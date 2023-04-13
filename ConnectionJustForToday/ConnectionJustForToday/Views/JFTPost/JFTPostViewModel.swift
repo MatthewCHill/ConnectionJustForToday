@@ -23,11 +23,8 @@ class JFTPostViewModel {
         self.delegate = delegate
     }
     
-    func savePost(postBody: String, isControversial: Bool = false) {
-        let jftPost = JFTPost(post: postBody)
-            jftPost.post = postBody
-            jftPost.isControversial = isControversial
-            service.createJFTPost(post: postBody, isControversial: isControversial)
+    func savePost(postBody: String, displayName: String, country: String, isControversial: Bool = false) {
+            service.createJFTPost(post: postBody, displayName: displayName, country: country, isControversial: isControversial)
             delegate?.postSuccessfullySaved()
     }
 }

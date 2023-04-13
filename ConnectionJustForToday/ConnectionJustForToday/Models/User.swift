@@ -17,9 +17,9 @@ class User {
         static let collectionType = "userInfo"
     }
     
-    let name: String
-    let cleanDate: Date
-    let country: String
+    var name: String
+    var cleanDate: String
+    var country: String
     let uuid: String
     
     var dictionaryRepresentation: [String: AnyHashable] {
@@ -30,7 +30,7 @@ class User {
         ]
     }
     
-    init(name: String, cleanDate: Date, country: String, uuid: String = UUID().uuidString) {
+    init(name: String, cleanDate: String, country: String, uuid: String = UUID().uuidString) {
         self.name = name
         self.cleanDate = cleanDate
         self.country = country
@@ -42,7 +42,7 @@ extension User {
     
     convenience init? (fromDictionary dictionary: [String:Any]) {
         guard let name = dictionary[Key.name] as? String,
-              let cleanDate = dictionary[Key.cleanDate] as? Date,
+              let cleanDate = dictionary[Key.cleanDate] as? String,
               let country = dictionary[Key.country] as? String,
               let uuid = dictionary[Key.uuid] as? String else {return nil}
         

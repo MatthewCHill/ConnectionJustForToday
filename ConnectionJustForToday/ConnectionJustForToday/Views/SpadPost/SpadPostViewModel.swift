@@ -23,11 +23,8 @@ class SPADPostViewModel {
         self.delegate = delegate
     }
     
-    func savePost(postBody: String, isControversial: Bool = false) {
-        let spadPost = SPADPost(post: postBody)
-        spadPost.post = postBody
-        spadPost.isControversial = isControversial
-        service.createSPADPost(post: postBody, isControversial: isControversial)
+    func savePost(postBody: String, displayName: String, country: String, isControversial: Bool = false) {
+        service.createSPADPost(post: postBody, displayName: displayName, country: country, isControversial: isControversial)
         delegate?.postSuccessfullySaved()
     }
 } // End of class

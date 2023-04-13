@@ -26,6 +26,11 @@ class JFTReadingViewController: UIViewController{
         jftPostsTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.loadPosts()
+    }
+    
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
     
@@ -63,13 +68,14 @@ extension JFTReadingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath) as? JFTPostTableViewCell else {return UITableViewCell()}
         
+        let post = viewModel.jftPosts[indexPath.row]
+        cell.updateUI(with: post)
         return cell
     }
-    
-    
 }
+
 
 
 
