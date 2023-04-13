@@ -63,14 +63,14 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
 
 extension JFTReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.jftPosts.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath) as? JFTPostTableViewCell else {return UITableViewCell()}
         
-        let post = viewModel.jftPosts[indexPath.row]
-        cell.updateUI(with: post)
+//        let post = viewModel.jftPosts[indexPath.row]
+//        cell.updateUI(with: post)
         return cell
     }
 }
