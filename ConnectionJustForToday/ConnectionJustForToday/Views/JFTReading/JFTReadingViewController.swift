@@ -49,7 +49,6 @@ class JFTReadingViewController: UIViewController{
 } // End of class
 
 // MARK: - Extensions
-
 extension JFTReadingViewController: JFTReadingViewModelDelegate {
     func postsLoadedSuccessfully() {
         self.jftPostsTableView.reloadData()
@@ -75,7 +74,3 @@ extension JFTReadingViewController: UITableViewDataSource {
         return cell
     }
 }
-
-
-
-
