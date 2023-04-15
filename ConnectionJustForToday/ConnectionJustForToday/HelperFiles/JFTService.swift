@@ -50,9 +50,9 @@ struct JFTService {
                     break Decode
                 case .error:
                     print("Decoding error")
-                    let replacementCharacter = UnicodeScalar(0xFFFD)!
-                    sanitizedData.append(contentsOf: replacementCharacter.utf8)
-                    utf8Decoder = UTF8()
+//                    let replacementCharacter = UnicodeScalar(0xFFFD)!
+//                    sanitizedData.append(contentsOf: replacementCharacter.utf8)
+//                    utf8Decoder = UTF8()
                 }
             }
             return sanitizedData

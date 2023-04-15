@@ -40,8 +40,7 @@ class JFTReadingViewController: UIViewController{
         guard let jft = viewModel.jftReading else { return }
         jftDateLabel.text = jft.date
         jftTitleLabel.text = jft.title
-        jftQuoteLabel.text = jft.reference
-        jftQuoteLabel.text = jft.quote + jft.pageNumber
+        jftQuoteLabel.text = "\(jft.quote) \(jft.reference)"
         jftBodyTextView.text = jft.body
         jftAffirmationLabel.text = jft.affirmation
         jftCopyrightLabel.text = jft.copyright
@@ -63,14 +62,14 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
 
 extension JFTReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.jftPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath) as? JFTPostTableViewCell else {return UITableViewCell()}
         
-//        let post = viewModel.jftPosts[indexPath.row]
-//        cell.updateUI(with: post)
+        let post = viewModel.jftPosts[indexPath.row]
+        cell.updateUI(with: post)
         return cell
     }
 }

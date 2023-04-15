@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,7 +144,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-Yk-ZDo" userLabel="JFTStackView">
-                                                <rect key="frame" x="4" y="0.0" width="385" height="80.666666666666671"/>
+                                                <rect key="frame" x="4" y="0.0" width="385" height="76"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Title)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n68-aT-vbH">
                                                         <rect key="frame" x="0.0" y="0.0" width="385" height="24"/>
@@ -154,28 +153,27 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(Date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVM-qR-k4N">
-                                                        <rect key="frame" x="0.0" y="32" width="385" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="32" width="385" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(Quote)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H99-oV-oew">
-                                                        <rect key="frame" x="0.0" y="60.33333333333335" width="385" height="20.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="58" width="385" height="18"/>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-bp-pfO">
-                                                <rect key="frame" x="4" y="82.666666666666657" width="385" height="300"/>
-                                                <color key="backgroundColor" name="AccentColor"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-bp-pfO">
+                                                <rect key="frame" x="4" y="78" width="385" height="300"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bAw-5h-Zv6" userLabel="AffermationSV">
-                                                <rect key="frame" x="4" y="384.66666666666669" width="385" height="88"/>
+                                                <rect key="frame" x="4" y="380" width="385" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(JFT Affirmation)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03X-g7-Ctc">
                                                         <rect key="frame" x="0.0" y="0.0" width="385" height="20.333333333333332"/>
@@ -190,18 +188,21 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCb-bq-bLN">
-                                                        <rect key="frame" x="0.0" y="43.999999999999943" width="385" height="44"/>
+                                                        <rect key="frame" x="0.0" y="44" width="385" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="57U-2p-z0F"/>
+                                                            <constraint firstAttribute="height" constant="35" id="57U-2p-z0F"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Comment"/>
+                                                        <connections>
+                                                            <segue destination="Amk-Pc-U0b" kind="show" id="xhN-s5-1Ne"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0F-27-XH7">
-                                                <rect key="frame" x="4" y="474.66666666666657" width="385" height="523.33333333333348"/>
-                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                <rect key="frame" x="4" y="461" width="385" height="537"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jftPost" rowHeight="200" id="Env-vV-EKh" customClass="JFTPostTableViewCell" customModule="ConnectionJustForToday" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="50" width="385" height="200"/>
@@ -210,27 +211,59 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="385" height="200"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JOW-Pi-S3V">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="385" height="200"/>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOW-Pi-S3V">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="385" height="180"/>
+                                                                    <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="160" id="pqS-kl-a5N"/>
+                                                                        <constraint firstAttribute="height" constant="100" id="pqS-kl-a5N"/>
                                                                     </constraints>
                                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                     <color key="textColor" systemColor="labelColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 </textView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="wgm-Ou-jNV">
+                                                                    <rect key="frame" x="5" y="180" width="375" height="20"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9t-nq-pZ5">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="20"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(country)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPg-Cy-fTC">
+                                                                            <rect key="frame" x="95" y="0.0" width="70.333333333333314" height="20"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdh-Wc-0mM">
+                                                                            <rect key="frame" x="203.33333333333337" y="0.0" width="171.66666666666663" height="20"/>
+                                                                            <state key="normal" title="Button"/>
+                                                                            <buttonConfiguration key="configuration" style="plain" image="flag" catalog="system"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemMintColor"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="JOW-Pi-S3V" firstAttribute="top" secondItem="ety-VN-Dap" secondAttribute="top" id="0cm-L8-WqB"/>
-                                                                <constraint firstAttribute="bottom" secondItem="JOW-Pi-S3V" secondAttribute="bottom" id="9tq-8o-brp"/>
+                                                                <constraint firstAttribute="bottom" secondItem="JOW-Pi-S3V" secondAttribute="bottom" constant="20" id="9tq-8o-brp"/>
+                                                                <constraint firstItem="wgm-Ou-jNV" firstAttribute="leading" secondItem="ety-VN-Dap" secondAttribute="leading" constant="5" id="goh-5o-sZi"/>
+                                                                <constraint firstItem="wgm-Ou-jNV" firstAttribute="top" secondItem="JOW-Pi-S3V" secondAttribute="bottom" id="nnu-RJ-Oyh"/>
                                                                 <constraint firstItem="JOW-Pi-S3V" firstAttribute="leading" secondItem="ety-VN-Dap" secondAttribute="leading" id="nx2-hA-cb3"/>
+                                                                <constraint firstAttribute="trailing" secondItem="wgm-Ou-jNV" secondAttribute="trailing" constant="5" id="rpA-Pp-xUc"/>
+                                                                <constraint firstAttribute="bottom" secondItem="wgm-Ou-jNV" secondAttribute="bottom" id="vc3-YR-9Vy"/>
                                                                 <constraint firstAttribute="trailing" secondItem="JOW-Pi-S3V" secondAttribute="trailing" id="ync-E4-57q"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
-                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="countryLabel" destination="IPg-Cy-fTC" id="Wip-ER-kFi"/>
+                                                            <outlet property="isControversialButton" destination="vdh-Wc-0mM" id="24D-Ur-QYU"/>
+                                                            <outlet property="postBodyTextView" destination="JOW-Pi-S3V" id="UfK-xR-Q4K"/>
+                                                            <outlet property="userNameLabel" destination="E9t-nq-pZ5" id="Rkf-CC-DOx"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -647,7 +680,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQx-b4-REz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551.90839694656484" y="824.64788732394368"/>
+            <point key="canvasLocation" x="531" y="794"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="roB-MO-omM">
@@ -773,12 +806,10 @@
     <resources>
         <image name="Connection" width="1920" height="1283"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="flag" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="note" catalog="system" width="128" height="107"/>
         <image name="xmark.bin" catalog="system" width="128" height="92"/>
-        <namedColor name="AccentColor">
-            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -794,11 +825,8 @@
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
