@@ -37,6 +37,7 @@ class JFTReadingViewModel {
                 
             case .success(let jftReading):
                 self?.jftReading = jftReading
+                jftReading.date = Date().stringValue()
                 self?.delegate?.scrapedReadingSuccessful()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -50,7 +51,11 @@ class JFTReadingViewModel {
                 
             case .success(let posts):
                 self?.jftPosts = posts
-                self?.delegate?.postsLoadedSuccessfully()
+                if self?.jftPosts.first?.date == self?.jftReading?.date {
+                    self?.delegate?.postsLoadedSuccessfully()
+                } else {
+                    return
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }
