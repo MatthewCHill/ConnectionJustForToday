@@ -44,6 +44,10 @@ struct FirebaseService {
         }
     }
     
+    func deleteJFTPost(post: JFTPost) {
+        ref.collection(JFTPost.Key.collectionType).document(post.uuid).delete()
+    }
+    
     // MARK: - SPAD Functions
     func createSPADPost(post: String, displayName: String, country: String,isControversial: Bool) {
         let post = SPADPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
@@ -67,6 +71,10 @@ struct FirebaseService {
             let posts = dictionaryArray.compactMap { SPADPost(fromDictionary: $0)}
             completion(.success(posts))
         }
+    }
+    
+    func deleteSPADPost(post: SPADPost) {
+        ref.collection(SPADPost.Key.collectionType).document(post.uuid).delete()
     }
     
     // MARK: - User functions
