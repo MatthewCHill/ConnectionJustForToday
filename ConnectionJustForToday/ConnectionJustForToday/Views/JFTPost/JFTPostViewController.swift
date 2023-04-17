@@ -35,7 +35,7 @@ class JFTPostViewController: UIViewController {
     @IBAction func shareButtonTapped(_ sender: Any) {
         updateUI()
     }
-}
+} // End Of Class
 
 // MARK: - Extensions
 

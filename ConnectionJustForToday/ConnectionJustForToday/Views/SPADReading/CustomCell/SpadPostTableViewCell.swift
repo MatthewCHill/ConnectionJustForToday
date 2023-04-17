@@ -21,5 +21,4 @@ class SpadPostTableViewCell: UITableViewCell {
         countryLabel.text = post.country
         postBodyTextView.text = post.post
     }
-
-}
+} // End of class
