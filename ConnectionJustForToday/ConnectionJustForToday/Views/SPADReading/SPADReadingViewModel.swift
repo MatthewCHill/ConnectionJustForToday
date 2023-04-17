@@ -37,6 +37,7 @@ class SPADReadingViewModel {
                 
             case .success(let spadReading):
                 self?.spadReading = spadReading
+                spadReading.date = Date().stringValue()
                 self?.delegate?.scrapedReadingSuccessful()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -50,7 +51,11 @@ class SPADReadingViewModel {
                 
             case .success(let posts):
                 self?.spadPosts = posts
-                self?.delegate?.postsLoadedSuccessfully()
+                if self?.spadPosts.first?.date == self?.spadReading?.date {
+                    self?.delegate?.postsLoadedSuccessfully()
+                } else {
+                    return
+                }
             case .failure(let error):
                 print(error.localizedDescription)
             }

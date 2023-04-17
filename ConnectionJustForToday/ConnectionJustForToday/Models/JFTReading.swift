@@ -36,7 +36,7 @@ class JFTReading {
     var postsJFT: [JFTPost]?
     var uuid: String
     
-    init(date: String, title: String, pageNumber: String, quote: String, reference: String, body: String, affirmation: String, copyright: String, posts: [JFTPost] = [], uuid: String = UUID().uuidString) {
+    init(date: String = Date().stringValue(), title: String, pageNumber: String, quote: String, reference: String, body: String, affirmation: String, copyright: String, posts: [JFTPost] = [], uuid: String = UUID().uuidString) {
         
         self.date = date
         self.title = title

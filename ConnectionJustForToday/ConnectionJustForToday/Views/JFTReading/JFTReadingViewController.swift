@@ -56,6 +56,7 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
     func scrapedReadingSuccessful() {
         DispatchQueue.main.async {
             self.updateUI()
+            self.viewModel.loadPosts()
         }
     }
 }

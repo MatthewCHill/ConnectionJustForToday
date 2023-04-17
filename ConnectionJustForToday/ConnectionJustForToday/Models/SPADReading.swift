@@ -24,7 +24,7 @@ class SPADReading {
         static let spadPosts = "spadPosts"
     }
     
-    let date: String
+    var date: String
     let title: String
     let pageNumber: String
     let quote: String

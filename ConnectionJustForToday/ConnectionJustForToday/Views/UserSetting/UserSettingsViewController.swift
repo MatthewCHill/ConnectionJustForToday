@@ -69,6 +69,6 @@ class UserSettingsViewController: UIViewController {
 // MARK: - Extension
 extension UserSettingsViewController: UserSettingViewModelDelegate {
     func userSettingsSaved() {
-        self.navigationController?.pushViewController(JFTPostViewController(), animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }

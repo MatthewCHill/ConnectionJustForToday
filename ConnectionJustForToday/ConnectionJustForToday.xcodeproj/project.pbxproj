@@ -24,6 +24,7 @@
 		349B279829D6219F00C30A17 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B279729D6219F00C30A17 /* FirebaseService.swift */; };
 		34A17B0D29DF52B100945269 /* JFTPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A17B0C29DF52B100945269 /* JFTPostViewController.swift */; };
 		34A17B0F29DF52C100945269 /* JFTPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */; };
+		34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CA29EDA9E400AC5D90 /* DateExtension.swift */; };
 		34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */; };
 		34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */; };
 		34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */; };
@@ -62,6 +63,7 @@
 		349B279729D6219F00C30A17 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		34A17B0C29DF52B100945269 /* JFTPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostViewController.swift; sourceTree = "<group>"; };
 		34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostViewModel.swift; sourceTree = "<group>"; };
+		34B540CA29EDA9E400AC5D90 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewModel.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				34B7A69229DD0915005ECA4E /* JFTService.swift */,
 				34B7A6A029DDC852005ECA4E /* SPADService.swift */,
 				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
+				34B540CA29EDA9E400AC5D90 /* DateExtension.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */,
 				34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */,
 				34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */,
+				34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */,
 				349B277629D5D80800C30A17 /* JFTReading.swift in Sources */,
 				34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */,
 				34C30D4729E47D0400021480 /* SpadPostViewModel.swift in Sources */,

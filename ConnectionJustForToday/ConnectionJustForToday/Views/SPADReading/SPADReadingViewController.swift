@@ -56,6 +56,7 @@ extension SPADReadingViewController: SpadReadingViewModelDelegate {
     func scrapedReadingSuccessful() {
         DispatchQueue.main.async {
             self.updateUI()
+            self.viewModel.fetchPosts()
         }
     }
 }
