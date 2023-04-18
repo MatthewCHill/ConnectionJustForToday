@@ -241,6 +241,9 @@
                                                                             <rect key="frame" x="203.33333333333337" y="0.0" width="171.66666666666663" height="40"/>
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="plain" image="flag" catalog="system"/>
+                                                                            <connections>
+                                                                                <action selector="isControversialButtonTapped:" destination="Env-vV-EKh" eventType="touchUpInside" id="BSO-RS-uc4"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <constraints>
@@ -290,7 +293,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstItem="sYl-7o-tf3" firstAttribute="bottom" secondItem="xKi-h3-Zo2" secondAttribute="bottom" id="6Wm-19-08T"/>
                                     <constraint firstItem="sYl-7o-tf3" firstAttribute="leading" secondItem="xKi-h3-Zo2" secondAttribute="leading" id="dQd-5T-fDr"/>
@@ -713,6 +715,9 @@
                                                                             <rect key="frame" x="203.33333333333337" y="0.0" width="171.66666666666663" height="40"/>
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="plain" image="flag" catalog="system"/>
+                                                                            <connections>
+                                                                                <action selector="isControversialButtonTapped:" destination="a30-nL-0OL" eventType="touchUpInside" id="HbP-AL-2c9"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <constraints>
@@ -806,6 +811,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAP-Ff-vRK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="a30-nL-0OL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2127.4809160305344" y="53.521126760563384"/>
         </scene>

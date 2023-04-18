@@ -29,6 +29,7 @@ class JFTReadingViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.loadPosts()
+        viewModel.deleteOldPosts()
     }
     
     // MARK: - Properties
@@ -63,14 +64,15 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
 
 extension JFTReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.jftPosts.count
+        return viewModel.filteredJFTPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "jftPost", for: indexPath) as? JFTPostTableViewCell else {return UITableViewCell()}
         
-        let post = viewModel.jftPosts[indexPath.row]
+        let post = viewModel.filteredJFTPosts[indexPath.row]
         cell.updateUI(with: post)
+        
         return cell
     }
 }

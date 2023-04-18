@@ -63,13 +63,13 @@ extension SPADReadingViewController: SpadReadingViewModelDelegate {
 
 extension SPADReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.spadPosts.count
+        return viewModel.filteredSpadPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "spadPost", for: indexPath) as? SpadPostTableViewCell else {return UITableViewCell()}
         
-        let post = viewModel.spadPosts[indexPath.row]
+        let post = viewModel.filteredSpadPosts[indexPath.row]
         cell.updateUI(for: post)
         return cell
     }
