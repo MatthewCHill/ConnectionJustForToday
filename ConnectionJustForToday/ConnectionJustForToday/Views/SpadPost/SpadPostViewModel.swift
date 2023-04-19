@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 protocol SPADPostViewModelDelegate: AnyObject {
-    func postSuccessfullySaved()
+    func postSuccessfullySaved(with post: SPADPost)
 }
 
 class SPADPostViewModel {
@@ -24,7 +24,8 @@ class SPADPostViewModel {
     }
     
     func savePost(postBody: String, displayName: String, country: String, isControversial: Bool = false) {
-        service.createSPADPost(post: postBody, displayName: displayName, country: country, isControversial: isControversial)
-        delegate?.postSuccessfullySaved()
+        let post = SPADPost(post: postBody, displayName: displayName, country: country, isControversial: isControversial)
+        service.createSPADPost(with: post)
+        delegate?.postSuccessfullySaved(with: post)
     }
 } // End of class

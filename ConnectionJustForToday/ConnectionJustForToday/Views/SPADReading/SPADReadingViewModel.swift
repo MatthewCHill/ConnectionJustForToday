@@ -10,6 +10,7 @@ import Foundation
 protocol SpadReadingViewModelDelegate: AnyObject {
     func scrapedReadingSuccessful()
     func postsLoadedSuccessfully()
+    func controversialPostDeleted()
 }
 
 class SPADReadingViewModel {
@@ -17,6 +18,7 @@ class SPADReadingViewModel {
     // MARK: - Properties
     var spadReading: SPADReading?
     var spadPosts: [SPADPost] = []
+    var filteredSpadPosts: [SPADPost] = []
     private var service: SPADService
     private var firebaseService: FirebaseService
     private weak var delegate: SpadReadingViewModelDelegate?
@@ -51,14 +53,25 @@ class SPADReadingViewModel {
                 
             case .success(let posts):
                 self?.spadPosts = posts
-                if self?.spadPosts.first?.date == self?.spadReading?.date {
+                
+                for i in posts {
+                    if i.date == self?.spadReading?.date {
+                        self?.filteredSpadPosts.append(i)
+                    }
                     self?.delegate?.postsLoadedSuccessfully()
-                } else {
-                    return
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func deletePost(post: SPADPost, completion: @escaping() -> Void) {
+        guard let indexOfPost = filteredSpadPosts.firstIndex(of: post) else { return }
+        firebaseService.deleteSPADPost(post: post)
+        filteredSpadPosts.remove(at: indexOfPost)
+        completion()
+        self.delegate?.controversialPostDeleted()
+        
     }
 } // End Of Class

@@ -19,9 +19,7 @@ struct FirebaseService {
     let ref = Firestore.firestore()
     
     // MARK: - JFT Functions
-    func createJFTPost(post: String, displayName: String, country: String, isControversial: Bool) {
-        
-        let post = JFTPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
+    func createJFTPost(with post: JFTPost) {
         ref.collection(JFTPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     
@@ -44,9 +42,12 @@ struct FirebaseService {
         }
     }
     
+    func deleteJFTPost(post: JFTPost) {
+        ref.collection(JFTPost.Key.collectionType).document(post.uuid).delete()
+    }
+    
     // MARK: - SPAD Functions
-    func createSPADPost(post: String, displayName: String, country: String,isControversial: Bool) {
-        let post = SPADPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
+    func createSPADPost(with post: SPADPost) {
         ref.collection(SPADPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     
@@ -67,6 +68,10 @@ struct FirebaseService {
             let posts = dictionaryArray.compactMap { SPADPost(fromDictionary: $0)}
             completion(.success(posts))
         }
+    }
+    
+    func deleteSPADPost(post: SPADPost) {
+        ref.collection(SPADPost.Key.collectionType).document(post.uuid).delete()
     }
     
     // MARK: - User functions

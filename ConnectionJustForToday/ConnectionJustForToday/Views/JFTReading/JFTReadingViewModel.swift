@@ -10,6 +10,7 @@ import Foundation
 protocol JFTReadingViewModelDelegate: AnyObject {
     func scrapedReadingSuccessful()
     func postsLoadedSuccessfully()
+    func controversialPostDeleted()
 }
 
 class JFTReadingViewModel {
@@ -17,6 +18,7 @@ class JFTReadingViewModel {
     // MARK: - Properties
     var jftReading: JFTReading?
     var jftPosts: [JFTPost] = []
+    var filteredJFTPosts: [JFTPost] = []
     private var service: JFTService
     private var firebaseService: FirebaseService
     private weak var delegate: JFTReadingViewModelDelegate?
@@ -51,14 +53,24 @@ class JFTReadingViewModel {
                 
             case .success(let posts):
                 self?.jftPosts = posts
-                if self?.jftPosts.first?.date == self?.jftReading?.date {
+                
+                for i in posts {
+                    if i.date == self?.jftReading?.date {
+                        self?.filteredJFTPosts.append(i)
+                    }
                     self?.delegate?.postsLoadedSuccessfully()
-                } else {
-                    return
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func deletePost(post: JFTPost, completion: @escaping() -> Void) {
+        guard let indexOfPost = filteredJFTPosts.firstIndex(of: post) else { return }
+        firebaseService.deleteJFTPost(post: post)
+        filteredJFTPosts.remove(at: indexOfPost)
+        completion()
+        self.delegate?.controversialPostDeleted()
     }
 } // End of Class

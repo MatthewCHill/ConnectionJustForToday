@@ -22,12 +22,13 @@ class SPADReadingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SPADReadingViewModel(delegate: self)
+        viewModel.fetchPosts()
         spadPostTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.fetchPosts()
+        spadPostTableView.reloadData()
     }
     
     // MARK: - Properties
@@ -44,11 +45,37 @@ class SPADReadingViewController: UIViewController{
         spadAffirmationLabel.text = "Just For Today: \(spad.affirmation)"
         spadCopyrightLabel.text = spad.copyright
     }
+    
+    func presentControversialAlert(post: SPADPost) {
+        let alertController = UIAlertController(title: "Controversial Comment", message: "Selecting report will flag the post to be deleted.", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        let confirmAction = UIAlertAction(title: "Report", style: .default) { _ in
+            self.viewModel.deletePost(post: post) {
+                self.dismiss(animated: true)
+            }
+        }
+        
+        alertController.addAction(dismissAction)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "spadPost",
+              let destinationVC = segue.destination as? SPADPostViewController else { return }
+        destinationVC.spadReadingViewModel = viewModel
+    }
 } // End of class
 
 // MARK: - Extension
-
 extension SPADReadingViewController: SpadReadingViewModelDelegate {
+    func controversialPostDeleted() {
+        self.spadPostTableView.reloadData()
+    }
+    
     func postsLoadedSuccessfully() {
         self.spadPostTableView.reloadData()
     }
@@ -63,14 +90,23 @@ extension SPADReadingViewController: SpadReadingViewModelDelegate {
 
 extension SPADReadingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.spadPosts.count
+        return viewModel.filteredSpadPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "spadPost", for: indexPath) as? SpadPostTableViewCell else {return UITableViewCell()}
         
-        let post = viewModel.spadPosts[indexPath.row]
+        let post = viewModel.filteredSpadPosts[indexPath.row]
         cell.updateUI(for: post)
+        cell.spadPost = post
+        cell.delegate = self
+        
         return cell
+    }
+}
+
+extension SPADReadingViewController: SpadPostTableViewCellDelegate {
+    func presentAlert(with post: SPADPost) {
+        presentControversialAlert(post: post)
     }
 }

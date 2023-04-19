@@ -17,6 +17,7 @@ class SPADPostViewController: UIViewController {
     
     // MARK: - Propeties
     var viewModel: SPADPostViewModel!
+    var spadReadingViewModel: SPADReadingViewModel?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -42,7 +43,8 @@ class SPADPostViewController: UIViewController {
 // MARK: - Extensions
 
 extension SPADPostViewController: SPADPostViewModelDelegate {
-    func postSuccessfullySaved() {
+    func postSuccessfullySaved(with post: SPADPost) {
+        spadReadingViewModel?.filteredSpadPosts.append(post)
         self.navigationController?.popViewController(animated: true)
     }
 }
