@@ -35,6 +35,5 @@ class JFTPostTableViewCell: UITableViewCell {
         guard let jftPost = jftPost else { return }
         delegate?.presentAlert(with: jftPost)
     }
-    
 } // End of class
 

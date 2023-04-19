@@ -10,7 +10,6 @@ import UIKit
 class JFTReadingViewController: UIViewController{
     
     // MARK: - Outlets
-    
     @IBOutlet weak var jftTitleLabel: UILabel!
     @IBOutlet weak var jftDateLabel: UILabel!
     @IBOutlet weak var jftQuoteLabel: UILabel!
@@ -34,7 +33,6 @@ class JFTReadingViewController: UIViewController{
     
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
-    var alertCellView: JFTPostTableViewCellDelegate!
     
     // MARK: - Functions
     
@@ -57,7 +55,6 @@ class JFTReadingViewController: UIViewController{
             self.viewModel.deletePost(post: post) {
                 self.dismiss(animated: true)
             }
-            //            self.jftPostsTableView.reloadData()
         }
         
         alertController.addAction(dismissAction)

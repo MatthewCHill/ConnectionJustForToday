@@ -680,7 +680,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Comment"/>
                                                         <connections>
-                                                            <segue destination="NNf-go-jgO" kind="show" id="Ndl-Ig-j99"/>
+                                                            <segue destination="NNf-go-jgO" kind="show" identifier="spadPost" id="Ndl-Ig-j99"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -716,6 +716,7 @@
                                                                             <state key="normal" title="Button"/>
                                                                             <buttonConfiguration key="configuration" style="plain" image="flag" catalog="system"/>
                                                                             <connections>
+                                                                                <action selector="controversialButtonTapped:" destination="Nfc-Y2-lWg" eventType="touchUpInside" id="QFu-Sn-ycR"/>
                                                                                 <action selector="isControversialButtonTapped:" destination="a30-nL-0OL" eventType="touchUpInside" id="HbP-AL-2c9"/>
                                                                             </connections>
                                                                         </button>

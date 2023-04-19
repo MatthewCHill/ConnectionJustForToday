@@ -10,6 +10,7 @@ import Foundation
 protocol SpadReadingViewModelDelegate: AnyObject {
     func scrapedReadingSuccessful()
     func postsLoadedSuccessfully()
+    func controversialPostDeleted()
 }
 
 class SPADReadingViewModel {
@@ -63,5 +64,14 @@ class SPADReadingViewModel {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func deletePost(post: SPADPost, completion: @escaping() -> Void) {
+        guard let indexOfPost = filteredSpadPosts.firstIndex(of: post) else { return }
+        firebaseService.deleteSPADPost(post: post)
+        filteredSpadPosts.remove(at: indexOfPost)
+        completion()
+        self.delegate?.controversialPostDeleted()
+        
     }
 } // End Of Class
