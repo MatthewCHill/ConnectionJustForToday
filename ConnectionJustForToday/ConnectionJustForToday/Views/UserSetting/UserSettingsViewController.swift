@@ -57,9 +57,14 @@ class UserSettingsViewController: UIViewController {
               let userCleanDate = userCleanDateTextField.text,
               let userCountry = userCountryTextField.text else {return}
         
-        viewModel.saveUserSettings(userName: userName, userCountry: userCountry, cleandDate: userCleanDate)
+        viewModel.saveUserSettings(userName: userName, userCountry: userCountry, cleanDate: userCleanDate)
     }
     
+    func fetchUserInfo(with user: User) {
+        userNameTextField.text = user.name
+        userCountryTextField.text = user.country
+        userCleanDateTextField.text = user.cleanDate
+    }
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         updateUI()
@@ -73,6 +78,10 @@ class UserSettingsViewController: UIViewController {
 
 // MARK: - Extension
 extension UserSettingsViewController: UserSettingViewModelDelegate {
+    func userSettingsFetched(with user: User) {
+        fetchUserInfo(with: user)
+    }
+    
     func userSettingsSaved() {
         self.navigationController?.popToRootViewController(animated: true)
     }

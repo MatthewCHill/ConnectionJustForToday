@@ -77,11 +77,12 @@ struct FirebaseService {
     
     // MARK: - User functions
     func saveUserSetting(userName: String, cleanDate: String, country: String) {
-        let user = User(name: userName, cleanDate: cleanDate, country: country)
-        ref.collection(User.Key.collectionType).document(user.uuid).setData(user.dictionaryRepresentation)
+        guard let userUUID = Auth.auth().currentUser?.uid else { return }
+        let user = User(name: userName, cleanDate: cleanDate, country: country, uuid: userUUID)
+        ref.collection(User.Key.collectionType).document(userUUID).setData(user.dictionaryRepresentation)
     }
     
-    func fetchUserInfo(completion: @escaping(Result<User, FirebaseError>) -> Void) {
+    func fetchUserInfo(completion: @escaping(Result<[User], FirebaseError>) -> Void) {
         ref.collection(User.Key.collectionType).getDocuments { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -95,8 +96,7 @@ struct FirebaseService {
             }
             let dictionaryArray = data.compactMap { $0.data() }
             let users = dictionaryArray.compactMap { User(fromDictionary: $0)}
-            guard let user = users.first else {return}
-            completion(.success(user))
+            completion(.success(users))
         }
     }
     

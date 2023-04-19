@@ -20,7 +20,7 @@ class User {
     var name: String
     var cleanDate: String
     var country: String
-    let uuid: String
+    var uuid: String
     
     var dictionaryRepresentation: [String: AnyHashable] {
         [Key.name:self.name,
@@ -30,7 +30,7 @@ class User {
         ]
     }
     
-    init(name: String, cleanDate: String, country: String, uuid: String = UUID().uuidString) {
+    init(name: String, cleanDate: String, country: String, uuid: String) {
         self.name = name
         self.cleanDate = cleanDate
         self.country = country
@@ -47,5 +47,11 @@ extension User {
               let uuid = dictionary[Key.uuid] as? String else {return nil}
         
         self.init(name: name, cleanDate: cleanDate, country: country, uuid: uuid)
+    }
+}
+
+extension User: Equatable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.uuid == rhs.uuid
     }
 }
