@@ -25,26 +25,4 @@ struct CreateUserViewModel {
             print("Password Dont Match")
         }
     }
-    
-    func signIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error {
-                print("Error Signing In", error.localizedDescription)
-            }
-            if let result {
-                let user = result.user
-                print(user.uid)
-            }
-        }
-    }
-    
-    func signOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            print("Signed Out")
-        } catch let signOutError as NSError {
-            print("Error signing out", signOutError)
-        }
-    }
 } // End of class
