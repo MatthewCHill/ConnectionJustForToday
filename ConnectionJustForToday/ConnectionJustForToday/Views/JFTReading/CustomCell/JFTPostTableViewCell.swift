@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol JFTPostTableViewCellDelegate: AnyObject {
+    func presentAlert(with post: JFTPost)
+}
+
 class JFTPostTableViewCell: UITableViewCell {
     // MARK: - Outlets
     @IBOutlet weak var userNameLabel: UILabel!
@@ -15,10 +19,9 @@ class JFTPostTableViewCell: UITableViewCell {
     @IBOutlet weak var postBodyTextView: UITextView!
     
     // MARK: - properties
-    
-    var viewModel: JFTPostCellViewModel!
-    
-    
+    var jftPost: JFTPost?
+    var delegate: JFTPostTableViewCellDelegate?
+
     // MARK: - functions
     
     func updateUI(with post: JFTPost) {
@@ -27,27 +30,11 @@ class JFTPostTableViewCell: UITableViewCell {
         postBodyTextView.text = post.post
     }
     
-    func presentControversialAlert() {
-        let alertController = UIAlertController(title: "Controversial Comment", message: "Selecting done will flag the post to be deleted.", preferredStyle: .alert)
-        
-        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        let confirmAction = UIAlertAction(title: "Report", style: .default)
-        
-        alertController.addAction(dismissAction)
-        alertController.addAction(confirmAction)
-    }
-    
     // MARK: - Actions
     @IBAction func isControversialButtonTapped(_ sender: Any) {
-        presentControversialAlert()
+        guard let jftPost = jftPost else { return }
+        delegate?.presentAlert(with: jftPost)
     }
     
 } // End of class
 
-// MARK: - Extensions
-
-extension JFTPostTableViewCell: JFTPostCellViewModelDelegate {
-    func postDeleted() {
-    }
-}

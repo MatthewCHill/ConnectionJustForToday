@@ -61,3 +61,11 @@ extension JFTPost {
         self.init(post: post, displayName: displayName, country: country, date: date, isControversial: isControversial, uuid: uuid)
     }
 }
+
+extension JFTPost: Equatable {
+    static func == (lhs: JFTPost, rhs: JFTPost) -> Bool {
+        return lhs.uuid == rhs.uuid
+    }
+    
+    
+}

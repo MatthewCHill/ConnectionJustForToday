@@ -16,6 +16,7 @@ class JFTPostViewController: UIViewController {
     
     // MARK: - Propeties
     var viewModel: JFTPostViewModel!
+    var jftReadingViewModel: JFTReadingViewModel?
     
 // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -40,7 +41,8 @@ class JFTPostViewController: UIViewController {
 // MARK: - Extensions
 
 extension JFTPostViewController: JFTPostViewModelDelegate {
-    func postSuccessfullySaved() {
+    func postSuccessfullySaved(with post: JFTPost) {
+        jftReadingViewModel?.filteredJFTPosts.append(post)
         self.navigationController?.popViewController(animated: true)
     }
 }

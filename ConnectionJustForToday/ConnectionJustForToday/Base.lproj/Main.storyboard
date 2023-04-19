@@ -195,7 +195,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Comment"/>
                                                         <connections>
-                                                            <segue destination="Amk-Pc-U0b" kind="show" id="xhN-s5-1Ne"/>
+                                                            <segue destination="Amk-Pc-U0b" kind="show" identifier="jftPost" id="xhN-s5-1Ne"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -777,7 +777,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstItem="Iii-0A-h7W" firstAttribute="bottom" secondItem="5a8-9f-mi6" secondAttribute="bottom" id="Hm6-Y4-Wqc"/>
                                     <constraint firstItem="Iii-0A-h7W" firstAttribute="leading" secondItem="5a8-9f-mi6" secondAttribute="leading" id="SoS-09-kao"/>
@@ -852,9 +851,6 @@
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

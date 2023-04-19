@@ -23,17 +23,18 @@ class JFTReadingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = JFTReadingViewModel(delegate: self)
+        viewModel.loadPosts()
         jftPostsTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.loadPosts()
-        viewModel.deleteOldPosts()
+        jftPostsTableView.reloadData()
     }
     
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
+    var alertCellView: JFTPostTableViewCellDelegate!
     
     // MARK: - Functions
     
@@ -46,10 +47,38 @@ class JFTReadingViewController: UIViewController{
         jftAffirmationLabel.text = jft.affirmation
         jftCopyrightLabel.text = jft.copyright
     }
+    
+    func presentControversialAlert(post: JFTPost) {
+        let alertController = UIAlertController(title: "Controversial Comment", message: "Selecting report will flag the post to be deleted.", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        let confirmAction = UIAlertAction(title: "Report", style: .default) { _ in
+            self.viewModel.deletePost(post: post) {
+                self.dismiss(animated: true)
+            }
+            //            self.jftPostsTableView.reloadData()
+        }
+        
+        alertController.addAction(dismissAction)
+        alertController.addAction(confirmAction)
+        present(alertController, animated: true)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "jftPost",
+              let destinationVC = segue.destination as? JFTPostViewController else {return}
+        destinationVC.jftReadingViewModel = viewModel
+    }
 } // End of class
 
 // MARK: - Extensions
 extension JFTReadingViewController: JFTReadingViewModelDelegate {
+    func controversialPostDeleted() {
+        self.jftPostsTableView.reloadData()
+    }
+    
     func postsLoadedSuccessfully() {
         self.jftPostsTableView.reloadData()
     }
@@ -72,7 +101,15 @@ extension JFTReadingViewController: UITableViewDataSource {
         
         let post = viewModel.filteredJFTPosts[indexPath.row]
         cell.updateUI(with: post)
+        cell.jftPost = post
+        cell.delegate = self
         
         return cell
+    }
+}
+
+extension JFTReadingViewController: JFTPostTableViewCellDelegate {
+    func presentAlert(with post: JFTPost) {
+        presentControversialAlert(post: post)
     }
 }

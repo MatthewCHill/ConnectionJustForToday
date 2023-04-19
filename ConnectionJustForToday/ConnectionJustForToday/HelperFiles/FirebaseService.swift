@@ -19,9 +19,8 @@ struct FirebaseService {
     let ref = Firestore.firestore()
     
     // MARK: - JFT Functions
-    func createJFTPost(post: String, displayName: String, country: String, isControversial: Bool) {
-        
-        let post = JFTPost(post: post, displayName: displayName, country: country, isControversial: isControversial)
+    func createJFTPost(with post: JFTPost) {
+    
         ref.collection(JFTPost.Key.collectionType).document(post.uuid).setData(post.dictionaryRepresentation)
     }
     

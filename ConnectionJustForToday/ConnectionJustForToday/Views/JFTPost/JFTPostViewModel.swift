@@ -9,14 +9,13 @@ import Foundation
 import FirebaseFirestore
 
 protocol JFTPostViewModelDelegate: AnyObject {
-    func postSuccessfullySaved()
+    func postSuccessfullySaved(with post: JFTPost)
 }
 
 class JFTPostViewModel {
     
     let service: FirebaseService
     var delegate: JFTPostViewModelDelegate?
-    var jftPosts: JFTPost?
     
     init(service: FirebaseService = FirebaseService(), delegate: JFTPostViewModelDelegate) {
         self.service = service
@@ -24,7 +23,8 @@ class JFTPostViewModel {
     }
     
     func savePost(postBody: String, displayName: String, country: String, isControversial: Bool = false) {
-            service.createJFTPost(post: postBody, displayName: displayName, country: country, isControversial: isControversial)
-            delegate?.postSuccessfullySaved()
+        let post = JFTPost(post: postBody, displayName: displayName, country: country, isControversial: isControversial)
+            service.createJFTPost(with: post)
+            delegate?.postSuccessfullySaved(with: post)
     }
 }
