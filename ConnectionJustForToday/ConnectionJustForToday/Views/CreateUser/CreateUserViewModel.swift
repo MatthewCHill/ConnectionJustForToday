@@ -25,16 +25,4 @@ struct CreateUserViewModel {
             print("Password Dont Match")
         }
     }
-    
-    func signIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error {
-                print("Error Signing In", error.localizedDescription)
-            }
-            if let result {
-                let user = result.user
-                print(user.uid)
-            }
-        }
-    }
 } // End of class

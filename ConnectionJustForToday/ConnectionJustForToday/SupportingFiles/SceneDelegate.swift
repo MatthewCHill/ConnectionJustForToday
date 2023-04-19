@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.window?.rootViewController = tabBar
             } else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let createAccount = storyboard.instantiateViewController(withIdentifier: "CreateAccount")
+                let createAccount = storyboard.instantiateViewController(withIdentifier: "SignIn")
                 self.window?.rootViewController = createAccount
             }
         })

@@ -25,6 +25,8 @@
 		34A17B0D29DF52B100945269 /* JFTPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A17B0C29DF52B100945269 /* JFTPostViewController.swift */; };
 		34A17B0F29DF52C100945269 /* JFTPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */; };
 		34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CA29EDA9E400AC5D90 /* DateExtension.swift */; };
+		34B540D029F05B9C00AC5D90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */; };
+		34B540D229F05BB300AC5D90 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540D129F05BB300AC5D90 /* SignInViewModel.swift */; };
 		34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */; };
 		34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */; };
 		34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */; };
@@ -64,6 +66,8 @@
 		34A17B0C29DF52B100945269 /* JFTPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostViewController.swift; sourceTree = "<group>"; };
 		34A17B0E29DF52C100945269 /* JFTPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTPostViewModel.swift; sourceTree = "<group>"; };
 		34B540CA29EDA9E400AC5D90 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		34B540D129F05BB300AC5D90 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewModel.swift; sourceTree = "<group>"; };
@@ -175,9 +179,19 @@
 			path = JFTPost;
 			sourceTree = "<group>";
 		};
+		34B540CE29F05B7F00AC5D90 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */,
+				34B540D129F05BB300AC5D90 /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		34B7A67729DCB62C005ECA4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34B540CE29F05B7F00AC5D90 /* SignIn */,
 				34B7A68B29DCB7E0005ECA4E /* CreateUser */,
 				34B7A68629DCB707005ECA4E /* UserSetting */,
 				34B7A67F29DCB6AA005ECA4E /* SPADReading */,
@@ -346,12 +360,14 @@
 				34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */,
 				349B277629D5D80800C30A17 /* JFTReading.swift in Sources */,
 				34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */,
+				34B540D229F05BB300AC5D90 /* SignInViewModel.swift in Sources */,
 				34C30D4729E47D0400021480 /* SpadPostViewModel.swift in Sources */,
 				349B274129D4916F00C30A17 /* AppDelegate.swift in Sources */,
 				34C30D5029E7147C00021480 /* JFTPostTableViewCell.swift in Sources */,
 				349B277929D5D94000C30A17 /* JFTPost.swift in Sources */,
 				34A17B0D29DF52B100945269 /* JFTPostViewController.swift in Sources */,
 				349B274329D4916F00C30A17 /* SceneDelegate.swift in Sources */,
+				34B540D029F05B9C00AC5D90 /* SignInViewController.swift in Sources */,
 				349B277E29D5F9D400C30A17 /* SPADReading.swift in Sources */,
 				34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */,
 				349B278029D5FCBF00C30A17 /* SPADPost.swift in Sources */,
