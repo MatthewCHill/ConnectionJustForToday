@@ -66,6 +66,4 @@ extension JFTPost: Equatable {
     static func == (lhs: JFTPost, rhs: JFTPost) -> Bool {
         return lhs.uuid == rhs.uuid
     }
-    
-    
 }

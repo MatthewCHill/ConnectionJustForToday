@@ -65,6 +65,4 @@ extension SPADPost: Equatable {
     static func == (lhs: SPADPost, rhs: SPADPost) -> Bool {
         return lhs.uuid == rhs.uuid
     }
-    
-    
 }
