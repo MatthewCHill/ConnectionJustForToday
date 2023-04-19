@@ -178,12 +178,12 @@
 		34B7A67729DCB62C005ECA4E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				34C30D4329E47C2000021480 /* SpadPost */,
-				34A17B0B29DF529B00945269 /* JFTPost */,
 				34B7A68B29DCB7E0005ECA4E /* CreateUser */,
 				34B7A68629DCB707005ECA4E /* UserSetting */,
 				34B7A67F29DCB6AA005ECA4E /* SPADReading */,
+				34C30D4329E47C2000021480 /* SpadPost */,
 				34B7A67829DCB635005ECA4E /* JFTReading */,
+				34A17B0B29DF529B00945269 /* JFTPost */,
 			);
 			path = Views;
 			sourceTree = "<group>";

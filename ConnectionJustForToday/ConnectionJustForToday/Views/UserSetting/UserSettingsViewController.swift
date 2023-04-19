@@ -64,11 +64,16 @@ class UserSettingsViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         updateUI()
     }
+    
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        viewModel.signOut()
+    }
+    
 } // End of class
 
 // MARK: - Extension
 extension UserSettingsViewController: UserSettingViewModelDelegate {
     func userSettingsSaved() {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 enum FirebaseError: Error {
     case firebaseError(Error)
@@ -96,6 +97,16 @@ struct FirebaseService {
             let users = dictionaryArray.compactMap { User(fromDictionary: $0)}
             guard let user = users.first else {return}
             completion(.success(user))
+        }
+    }
+    
+    func signOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("Signed Out")
+        } catch let signOutError as NSError {
+            print("Error signing out", signOutError)
         }
     }
     

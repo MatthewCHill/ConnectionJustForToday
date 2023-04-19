@@ -32,4 +32,8 @@ class UserSettingViewModel {
         service.saveUserSetting(userName: userName, cleanDate: cleandDate, country: userCountry)
         delegate?.userSettingsSaved()
     }
+    
+    func signOut() {
+        service.signOut()
+    }
 } // End of class

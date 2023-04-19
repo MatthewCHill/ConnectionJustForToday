@@ -399,6 +399,15 @@
                                     <action selector="saveButtonTapped:" destination="mbH-ev-7He" eventType="touchUpInside" id="eRE-L7-xx1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjy-1k-e2Q">
+                                <rect key="frame" x="151.66666666666666" y="724.66666666666663" width="90" height="34.333333333333371"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="mbH-ev-7He" eventType="touchUpInside" id="sVI-G3-2Gt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ov6-yu-umQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -412,7 +421,9 @@
                             <constraint firstItem="R6I-A3-eyX" firstAttribute="top" secondItem="1zk-T5-Kml" secondAttribute="bottom" constant="30" id="VeN-sK-ASw"/>
                             <constraint firstItem="dTp-JX-VgW" firstAttribute="top" secondItem="ov6-yu-umQ" secondAttribute="top" constant="30" id="c8z-AT-P4f"/>
                             <constraint firstItem="bOg-pq-Oaf" firstAttribute="top" secondItem="ov6-yu-umQ" secondAttribute="top" id="fZy-n3-YvC"/>
+                            <constraint firstItem="Jjy-1k-e2Q" firstAttribute="centerX" secondItem="ov6-yu-umQ" secondAttribute="centerX" id="gK8-IG-Adn"/>
                             <constraint firstItem="ov6-yu-umQ" firstAttribute="trailing" secondItem="1zk-T5-Kml" secondAttribute="trailing" constant="10" id="ltV-ea-Tdu"/>
+                            <constraint firstItem="ov6-yu-umQ" firstAttribute="bottom" secondItem="Jjy-1k-e2Q" secondAttribute="bottom" constant="10" id="rCV-9n-kU3"/>
                             <constraint firstItem="bOg-pq-Oaf" firstAttribute="centerX" secondItem="ov6-yu-umQ" secondAttribute="centerX" id="tAx-Vc-fIR"/>
                             <constraint firstItem="dTp-JX-VgW" firstAttribute="leading" secondItem="ov6-yu-umQ" secondAttribute="leading" constant="10" id="yAt-JK-3ok"/>
                             <constraint firstItem="eb4-Rq-Vsr" firstAttribute="centerX" secondItem="ov6-yu-umQ" secondAttribute="centerX" id="zgy-Rp-fN7"/>
@@ -852,6 +863,9 @@
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
