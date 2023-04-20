@@ -21,12 +21,34 @@ class CreateUserViewController: UIViewController {
         viewModel = CreateUserViewModel()
     }
     
+    // MARK: - fucntions
+    func presentMainVC() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyBoard.instantiateViewController(identifier: "Navigation")
+        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalTransitionStyle = .crossDissolve
+        present(viewController, animated: true)
+    }
+    
+    func presentErrorAlertController(error: String) {
+        let alertController = UIAlertController(title: "", message: error, preferredStyle: .actionSheet)
+        let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true)
+    }
+    
     // MARK: - Actions
     @IBAction func createUserButtonTapped(_ sender: Any) {
         guard let email = userEmailTextField.text,
               let password = userPasswordTextField.text,
               let confrimPassword = confirmPasswordTextField.text else { return }
         
-        viewModel.createUser(email: email, password: password, confrimPassword: confrimPassword)
+        viewModel.createUser(email: email, password: password, confrimPassword: confrimPassword) { success, error in
+            if success == true {
+                self.presentMainVC()
+            } else {
+                self.presentErrorAlertController(error: error?.localizedDescription ?? "")
+            }
+        }
     }
 } // End of class
