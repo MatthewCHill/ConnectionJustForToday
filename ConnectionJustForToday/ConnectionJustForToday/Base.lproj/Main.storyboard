@@ -125,7 +125,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-Yk-ZDo" userLabel="JFTStackView">
-                                                <rect key="frame" x="4" y="0.0" width="385" height="76"/>
+                                                <rect key="frame" x="4" y="0.0" width="385" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Title)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n68-aT-vbH">
                                                         <rect key="frame" x="0.0" y="0.0" width="385" height="24"/>
@@ -140,21 +140,24 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(Quote)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H99-oV-oew">
-                                                        <rect key="frame" x="0.0" y="58" width="385" height="18"/>
+                                                        <rect key="frame" x="0.0" y="58" width="385" height="42"/>
                                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="jG1-C8-R4j"/>
+                                                </constraints>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3IR-bp-pfO">
-                                                <rect key="frame" x="4" y="78" width="385" height="400"/>
+                                                <rect key="frame" x="4" y="102" width="385" height="400"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bAw-5h-Zv6" userLabel="AffermationSV">
-                                                <rect key="frame" x="4" y="482" width="385" height="79"/>
+                                                <rect key="frame" x="4" y="506" width="385" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(JFT Affirmation)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03X-g7-Ctc">
                                                         <rect key="frame" x="0.0" y="0.0" width="385" height="20.333333333333332"/>
@@ -162,7 +165,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(copyright)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6k-1v-h3a">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(copyright)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6k-1v-h3a">
                                                         <rect key="frame" x="0.0" y="24.333333333333375" width="385" height="15.666666666666668"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <nil key="textColor"/>
@@ -182,7 +185,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0F-27-XH7">
-                                                <rect key="frame" x="4" y="565" width="385" height="433"/>
+                                                <rect key="frame" x="4" y="589" width="385" height="409"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="jftPost" rowHeight="200" id="Env-vV-EKh" customClass="JFTPostTableViewCell" customModule="ConnectionJustForToday" customModuleProvider="target">
@@ -422,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBl-Yr-FeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3179.3893129770991" y="54.929577464788736"/>
+            <point key="canvasLocation" x="2894" y="49"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="oTx-d9-bMx">
@@ -438,20 +441,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPY-qa-9rR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPY-qa-9rR" customClass="PlaceHolderTextView" customModule="ConnectionJustForToday" customModuleProvider="target">
                                 <rect key="frame" x="10" y="189.33333333333337" width="373" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="3e0-jI-1k7"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Share Your Experience Strength And Hope...">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="18"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YKy-os-pU1">
@@ -519,20 +515,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMK-Hd-Abc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMK-Hd-Abc" customClass="PlaceHolderTextView" customModule="ConnectionJustForToday" customModuleProvider="target">
                                 <rect key="frame" x="10" y="189.33333333333337" width="373" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Wb9-gg-TAp"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Share Your Experience Strength And Hope...">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="18"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-dL-f93">
@@ -644,7 +633,7 @@
                                                 </subviews>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-2l-7hP">
-                                                <rect key="frame" x="4" y="78" width="385" height="300"/>
+                                                <rect key="frame" x="4" y="78" width="385" height="400"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="385" id="mXt-Ey-Wzu"/>
                                                 </constraints>
@@ -653,7 +642,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="81U-zV-yQE" userLabel="AffermationSV">
-                                                <rect key="frame" x="4" y="380" width="385" height="79"/>
+                                                <rect key="frame" x="4" y="480" width="385" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(JFT Affirmation)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-Xh-gvd">
                                                         <rect key="frame" x="0.0" y="0.0" width="385" height="20.333333333333332"/>
@@ -662,7 +651,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(copyright)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnS-ox-QgL">
-                                                        <rect key="frame" x="0.0" y="24.333333333333318" width="385" height="15.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="24.333333333333375" width="385" height="15.666666666666668"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -681,7 +670,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdS-Fe-tr9">
-                                                <rect key="frame" x="4" y="461" width="385" height="537"/>
+                                                <rect key="frame" x="4" y="561" width="385" height="437"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="spadPost" rowHeight="200" id="Nfc-Y2-lWg" customClass="SpadPostTableViewCell" customModule="ConnectionJustForToday" customModuleProvider="target">
@@ -760,7 +749,7 @@
                                             <constraint firstItem="MxL-2l-7hP" firstAttribute="leading" secondItem="81U-zV-yQE" secondAttribute="leading" id="9RN-Jp-AHd"/>
                                             <constraint firstAttribute="height" constant="1000" id="BNg-TT-IMS"/>
                                             <constraint firstItem="NdS-Fe-tr9" firstAttribute="leading" secondItem="Iii-0A-h7W" secondAttribute="leading" constant="4" id="Cpj-Sk-lJa"/>
-                                            <constraint firstItem="MxL-2l-7hP" firstAttribute="height" secondItem="Iii-0A-h7W" secondAttribute="height" multiplier="0.3" id="EZI-qW-6Vz"/>
+                                            <constraint firstItem="MxL-2l-7hP" firstAttribute="height" secondItem="Iii-0A-h7W" secondAttribute="height" multiplier="0.4" id="EZI-qW-6Vz"/>
                                             <constraint firstItem="MxL-2l-7hP" firstAttribute="leading" secondItem="dGE-lR-7kJ" secondAttribute="leading" constant="4" id="FpV-by-xnB"/>
                                             <constraint firstItem="NdS-Fe-tr9" firstAttribute="top" secondItem="81U-zV-yQE" secondAttribute="bottom" constant="2" id="HoE-HM-q2c"/>
                                             <constraint firstItem="dGE-lR-7kJ" firstAttribute="top" secondItem="Iii-0A-h7W" secondAttribute="top" id="PJn-fW-bCB"/>

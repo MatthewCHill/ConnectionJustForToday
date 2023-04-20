@@ -27,6 +27,7 @@
 		34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CA29EDA9E400AC5D90 /* DateExtension.swift */; };
 		34B540D029F05B9C00AC5D90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */; };
 		34B540D229F05BB300AC5D90 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540D129F05BB300AC5D90 /* SignInViewModel.swift */; };
+		34B540D429F17E8000AC5D90 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540D329F17E8000AC5D90 /* PlaceholderTextView.swift */; };
 		34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */; };
 		34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */; };
 		34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */; };
@@ -68,6 +69,7 @@
 		34B540CA29EDA9E400AC5D90 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		34B540D129F05BB300AC5D90 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		34B540D329F17E8000AC5D90 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				34B7A6A029DDC852005ECA4E /* SPADService.swift */,
 				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
 				34B540CA29EDA9E400AC5D90 /* DateExtension.swift */,
+				34B540D329F17E8000AC5D90 /* PlaceholderTextView.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				34C30D4529E47CF200021480 /* SPADPostViewController.swift in Sources */,
 				34A17B0F29DF52C100945269 /* JFTPostViewModel.swift in Sources */,
 				34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */,
+				34B540D429F17E8000AC5D90 /* PlaceholderTextView.swift in Sources */,
 				34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */,
 				34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */,
 				34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */,
