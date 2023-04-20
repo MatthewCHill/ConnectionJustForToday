@@ -10,7 +10,6 @@ import UIKit
 class SPADReadingViewController: UIViewController{
     
     // MARK: - Outlets
-    @IBOutlet weak var spadTitleLabel: UILabel!
     @IBOutlet weak var spadDateLabel: UILabel!
     @IBOutlet weak var spadQuoteLabel: UILabel!
     @IBOutlet weak var spadBodyTextView: UITextView!
@@ -23,7 +22,6 @@ class SPADReadingViewController: UIViewController{
         super.viewDidLoad()
         setUpActivityIndicator()
         viewModel = SPADReadingViewModel(delegate: self)
-        viewModel.fetchPosts()
         spadPostTableView.dataSource = self
     }
     

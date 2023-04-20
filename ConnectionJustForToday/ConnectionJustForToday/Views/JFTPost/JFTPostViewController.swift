@@ -22,6 +22,7 @@ class JFTPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = JFTPostViewModel(delegate: self)
+        self.hideKeyboardWhenDone()
     }
     
     // MARK: - Functions

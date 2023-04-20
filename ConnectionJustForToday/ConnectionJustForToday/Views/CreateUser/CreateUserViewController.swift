@@ -19,6 +19,7 @@ class CreateUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CreateUserViewModel()
+        self.hideKeyboardWhenDone()
     }
     
     // MARK: - fucntions

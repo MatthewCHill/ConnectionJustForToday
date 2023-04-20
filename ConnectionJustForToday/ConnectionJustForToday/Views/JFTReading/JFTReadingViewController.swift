@@ -10,7 +10,6 @@ import UIKit
 class JFTReadingViewController: UIViewController{
     
     // MARK: - Outlets
-    @IBOutlet weak var jftTitleLabel: UILabel!
     @IBOutlet weak var jftDateLabel: UILabel!
     @IBOutlet weak var jftQuoteLabel: UILabel!
     @IBOutlet weak var jftAffirmationLabel: UILabel!
@@ -23,20 +22,20 @@ class JFTReadingViewController: UIViewController{
         super.viewDidLoad()
         setUpActivityIndicator()
         viewModel = JFTReadingViewModel(delegate: self)
-        viewModel.loadPosts()
         jftPostsTableView.dataSource = self
+        viewModel.loadPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         jftPostsTableView.reloadData()
     }
-    
+
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
     let activityIndicator = UIActivityIndicatorView()
     
-    // MARK: - Functions
+    // MARK: - Functions 
     
     func updateUI() {
         guard let jft = viewModel.jftReading else { return }

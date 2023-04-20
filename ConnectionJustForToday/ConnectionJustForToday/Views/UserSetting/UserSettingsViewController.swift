@@ -22,6 +22,7 @@ class UserSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = UserSettingViewModel(delegate: self)
+        self.hideKeyboardWhenDone()
         cleanTimeDatePicker()
     }
     
