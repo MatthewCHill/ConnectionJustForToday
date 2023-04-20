@@ -60,8 +60,4 @@ class UserSettingViewModel {
             }
         }
     }
-    
-//    func updateUser() {
-//        let userUUID = 
-//    }
 } // End of class

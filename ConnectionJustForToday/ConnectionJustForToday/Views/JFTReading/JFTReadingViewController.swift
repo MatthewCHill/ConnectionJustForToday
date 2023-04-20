@@ -10,7 +10,6 @@ import UIKit
 class JFTReadingViewController: UIViewController{
     
     // MARK: - Outlets
-    @IBOutlet weak var jftTitleLabel: UILabel!
     @IBOutlet weak var jftDateLabel: UILabel!
     @IBOutlet weak var jftQuoteLabel: UILabel!
     @IBOutlet weak var jftAffirmationLabel: UILabel!
@@ -21,25 +20,27 @@ class JFTReadingViewController: UIViewController{
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpActivityIndicator()
         viewModel = JFTReadingViewModel(delegate: self)
-        viewModel.loadPosts()
         jftPostsTableView.dataSource = self
+        viewModel.loadPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         jftPostsTableView.reloadData()
     }
-    
+
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
+    let activityIndicator = UIActivityIndicatorView()
     
-    // MARK: - Functions
+    // MARK: - Functions 
     
     func updateUI() {
         guard let jft = viewModel.jftReading else { return }
         jftDateLabel.text = jft.date
-        jftTitleLabel.text = jft.title
+        navigationItem.title = jft.title
         jftQuoteLabel.text = "\(jft.quote) \(jft.reference)"
         jftBodyTextView.text = jft.body
         jftAffirmationLabel.text = jft.affirmation
@@ -60,6 +61,23 @@ class JFTReadingViewController: UIViewController{
         alertController.addAction(dismissAction)
         alertController.addAction(confirmAction)
         present(alertController, animated: true)
+    }
+    
+    func setUpActivityIndicator() {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        self.view.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        self.view.isHidden = true
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        self.view.isUserInteractionEnabled = true
+        self.view.isHidden = false
     }
     
     // MARK: - Navigation
@@ -84,6 +102,7 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
         DispatchQueue.main.async {
             self.updateUI()
             self.viewModel.loadPosts()
+            self.stopAnimating()
         }
     }
 }

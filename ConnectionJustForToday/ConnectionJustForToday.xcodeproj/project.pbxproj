@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3402087629F1CD6F00DC4A00 /* UIViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402087529F1CD6F00DC4A00 /* UIViewControllers.swift */; };
 		349B274129D4916F00C30A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B274029D4916F00C30A17 /* AppDelegate.swift */; };
 		349B274329D4916F00C30A17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349B274229D4916F00C30A17 /* SceneDelegate.swift */; };
 		349B274829D4916F00C30A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349B274629D4916F00C30A17 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CA29EDA9E400AC5D90 /* DateExtension.swift */; };
 		34B540D029F05B9C00AC5D90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */; };
 		34B540D229F05BB300AC5D90 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540D129F05BB300AC5D90 /* SignInViewModel.swift */; };
+		34B540D429F17E8000AC5D90 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B540D329F17E8000AC5D90 /* PlaceholderTextView.swift */; };
 		34B7A67C29DCB688005ECA4E /* JFTReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */; };
 		34B7A68129DCB6C6005ECA4E /* SPADReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */; };
 		34B7A68329DCB6EE005ECA4E /* SPADReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */; };
@@ -50,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3402087529F1CD6F00DC4A00 /* UIViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllers.swift; sourceTree = "<group>"; };
 		349B273D29D4916F00C30A17 /* ConnectionJustForToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectionJustForToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349B274029D4916F00C30A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349B274229D4916F00C30A17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		34B540CA29EDA9E400AC5D90 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		34B540CF29F05B9B00AC5D90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		34B540D129F05BB300AC5D90 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		34B540D329F17E8000AC5D90 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		34B7A67B29DCB688005ECA4E /* JFTReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68029DCB6C6005ECA4E /* SPADReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewController.swift; sourceTree = "<group>"; };
 		34B7A68229DCB6EE005ECA4E /* SPADReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPADReadingViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				34B7A6A029DDC852005ECA4E /* SPADService.swift */,
 				34B7A69E29DD0F17005ECA4E /* NetworkError.swift */,
 				34B540CA29EDA9E400AC5D90 /* DateExtension.swift */,
+				34B540D329F17E8000AC5D90 /* PlaceholderTextView.swift */,
+				3402087529F1CD6F00DC4A00 /* UIViewControllers.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -352,9 +358,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3402087629F1CD6F00DC4A00 /* UIViewControllers.swift in Sources */,
 				34C30D4529E47CF200021480 /* SPADPostViewController.swift in Sources */,
 				34A17B0F29DF52C100945269 /* JFTPostViewModel.swift in Sources */,
 				34B7A68529DCB700005ECA4E /* JFTReadingViewModel.swift in Sources */,
+				34B540D429F17E8000AC5D90 /* PlaceholderTextView.swift in Sources */,
 				34B7A68829DCB732005ECA4E /* UserSettingsViewController.swift in Sources */,
 				34B7A6A129DDC852005ECA4E /* SPADService.swift in Sources */,
 				34B540CB29EDA9E400AC5D90 /* DateExtension.swift in Sources */,
@@ -526,6 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ89G6F3FY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConnectionJustForToday/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -553,6 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ89G6F3FY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConnectionJustForToday/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

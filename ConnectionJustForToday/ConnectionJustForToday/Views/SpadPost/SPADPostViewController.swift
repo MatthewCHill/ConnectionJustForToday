@@ -23,6 +23,7 @@ class SPADPostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SPADPostViewModel(delegate: self)
+        self.hideKeyboardWhenDone()
     }
     
     // MARK: - functions
