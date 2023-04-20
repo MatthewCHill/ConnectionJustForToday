@@ -29,10 +29,10 @@ class SignInViewController: UIViewController {
         signInWithApple.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(signInWithApple)
         NSLayoutConstraint.activate([
-            signInWithApple.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
-            signInWithApple.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            signInWithApple.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -70),
-            signInWithApple.heightAnchor.constraint(equalToConstant: 50)
+            signInWithApple.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            signInWithApple.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            signInWithApple.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -300),
+            signInWithApple.heightAnchor.constraint(equalToConstant: 40)
         ])
         signInWithApple.addTarget(self, action: #selector(appleSignInButtonTapped), for: .touchUpInside)
     }

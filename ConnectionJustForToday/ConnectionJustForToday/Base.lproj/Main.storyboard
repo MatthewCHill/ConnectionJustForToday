@@ -863,14 +863,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="New User?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-vN-L0c">
-                                <rect key="frame" x="150.66666666666666" y="628.66666666666663" width="92" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMN-vN-L0c">
+                                <rect key="frame" x="150.66666666666666" y="641.66666666666663" width="92" height="17"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeC-Av-jaH">
-                                <rect key="frame" x="16" y="670.66666666666652" width="361" height="34.333333333333371"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeC-Av-jaH">
+                                <rect key="frame" x="16" y="683.66666666666663" width="361" height="34.333333333333371"/>
                                 <color key="backgroundColor" red="0.28589199609999999" green="0.72839063309999996" blue="0.78361636400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.28589199609999999" green="0.72839063309999996" blue="0.78361636400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
@@ -887,6 +887,7 @@
                         <constraints>
                             <constraint firstItem="NeC-Av-jaH" firstAttribute="leading" secondItem="0Rb-Z2-8xj" secondAttribute="leading" constant="16" id="2M1-ec-BRx"/>
                             <constraint firstItem="0Rb-Z2-8xj" firstAttribute="trailing" secondItem="tzY-G9-K1m" secondAttribute="trailing" constant="16" id="6Iu-VA-d21"/>
+                            <constraint firstItem="0Rb-Z2-8xj" firstAttribute="bottom" secondItem="NeC-Av-jaH" secondAttribute="bottom" constant="100" id="AuN-YX-BVt"/>
                             <constraint firstItem="0Rb-Z2-8xj" firstAttribute="trailing" secondItem="fFN-7k-xRl" secondAttribute="trailing" id="KIN-c8-jAH"/>
                             <constraint firstItem="NeC-Av-jaH" firstAttribute="top" secondItem="qMN-vN-L0c" secondAttribute="bottom" constant="25" id="KJJ-RN-TrL"/>
                             <constraint firstItem="0Rb-Z2-8xj" firstAttribute="trailing" secondItem="NeC-Av-jaH" secondAttribute="trailing" constant="16" id="LXD-bg-PJn"/>
