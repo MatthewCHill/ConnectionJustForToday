@@ -41,7 +41,7 @@ class JFTReadingViewController: UIViewController{
     func updateUI() {
         guard let jft = viewModel.jftReading else { return }
         jftDateLabel.text = jft.date
-        jftTitleLabel.text = jft.title
+        navigationItem.title = jft.title
         jftQuoteLabel.text = "\(jft.quote) \(jft.reference)"
         jftBodyTextView.text = jft.body
         jftAffirmationLabel.text = jft.affirmation

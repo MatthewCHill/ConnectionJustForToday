@@ -40,7 +40,7 @@ class SPADReadingViewController: UIViewController{
     
     func updateUI() {
         guard let spad = viewModel.spadReading else { return }
-        spadTitleLabel.text = spad.title
+        navigationItem.title = spad.title
         spadDateLabel.text = spad.date
         spadQuoteLabel.text = spad.quote
         spadBodyTextView.text = spad.body
