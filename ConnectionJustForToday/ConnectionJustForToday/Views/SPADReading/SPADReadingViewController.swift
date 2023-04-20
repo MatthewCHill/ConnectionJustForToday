@@ -21,6 +21,7 @@ class SPADReadingViewController: UIViewController{
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpActivityIndicator()
         viewModel = SPADReadingViewModel(delegate: self)
         viewModel.fetchPosts()
         spadPostTableView.dataSource = self
@@ -33,6 +34,7 @@ class SPADReadingViewController: UIViewController{
     
     // MARK: - Properties
     var viewModel: SPADReadingViewModel!
+    let activityIndicator = UIActivityIndicatorView()
     
     // MARK: - Functions
     
@@ -62,6 +64,24 @@ class SPADReadingViewController: UIViewController{
         present(alertController, animated: true)
     }
     
+    func setUpActivityIndicator() {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        self.view.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        self.view.isHidden = true
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        self.view.isUserInteractionEnabled = true
+        self.view.isHidden = false
+    }
+
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "spadPost",
@@ -84,6 +104,7 @@ extension SPADReadingViewController: SpadReadingViewModelDelegate {
         DispatchQueue.main.async {
             self.updateUI()
             self.viewModel.fetchPosts()
+            self.stopAnimating()
         }
     }
 }

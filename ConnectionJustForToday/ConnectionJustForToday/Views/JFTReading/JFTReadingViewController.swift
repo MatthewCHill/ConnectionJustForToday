@@ -21,6 +21,7 @@ class JFTReadingViewController: UIViewController{
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpActivityIndicator()
         viewModel = JFTReadingViewModel(delegate: self)
         viewModel.loadPosts()
         jftPostsTableView.dataSource = self
@@ -33,6 +34,7 @@ class JFTReadingViewController: UIViewController{
     
     // MARK: - Properties
     var viewModel: JFTReadingViewModel!
+    let activityIndicator = UIActivityIndicatorView()
     
     // MARK: - Functions
     
@@ -62,6 +64,23 @@ class JFTReadingViewController: UIViewController{
         present(alertController, animated: true)
     }
     
+    func setUpActivityIndicator() {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        self.view.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        self.view.isHidden = true
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        self.view.isUserInteractionEnabled = true
+        self.view.isHidden = false
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "jftPost",
@@ -84,6 +103,7 @@ extension JFTReadingViewController: JFTReadingViewModelDelegate {
         DispatchQueue.main.async {
             self.updateUI()
             self.viewModel.loadPosts()
+            self.stopAnimating()
         }
     }
 }
