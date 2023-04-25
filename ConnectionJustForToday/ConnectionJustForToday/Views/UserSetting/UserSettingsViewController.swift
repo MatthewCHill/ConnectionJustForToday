@@ -66,9 +66,17 @@ class UserSettingsViewController: UIViewController {
         userCountryTextField.text = user.country
         userCleanDateTextField.text = user.cleanDate
     }
+    
+    func presentAlertController() {
+        let alertController = UIAlertController(title: "Success!", message: "Successfully Saved", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
+        alertController.addAction(dismissAction)
+        present(alertController, animated: true)
+    }
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         updateUI()
+        presentAlertController()
     }
     
     @IBAction func signOutButtonTapped(_ sender: Any) {

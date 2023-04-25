@@ -91,7 +91,6 @@ class SignInViewController: UIViewController {
         self.nonce = randomNonceString()
         request.nonce = sha256(nonce!)
         
-        
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.presentationContextProvider = self
         authorizationController.delegate = self

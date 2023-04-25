@@ -23,7 +23,6 @@ class JFTReadingViewController: UIViewController{
         setUpActivityIndicator()
         viewModel = JFTReadingViewModel(delegate: self)
         jftPostsTableView.dataSource = self
-        viewModel.loadPosts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
