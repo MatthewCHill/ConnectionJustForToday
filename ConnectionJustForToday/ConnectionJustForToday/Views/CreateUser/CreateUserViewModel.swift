@@ -11,8 +11,8 @@ import FirebaseAuth
 
 struct CreateUserViewModel {
     
-    func createUser(email: String, password: String, confrimPassword: String, completion: @escaping (Bool, Error?) -> Void) {
-        if password == confrimPassword {
+    func createUser(email: String, password: String, confirmPassword: String, completion: @escaping (Bool, Error?) -> Void) {
+        if password == confirmPassword {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let error {
                     print("Error Creating User", error.localizedDescription)

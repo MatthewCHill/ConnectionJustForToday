@@ -26,6 +26,11 @@ class UserSettingsViewController: UIViewController {
         cleanTimeDatePicker()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchUserInfo()
+    }
+    
     // MARK: - Functions
     func cleanTimeDatePicker() {
         // adds the toolbar
@@ -73,6 +78,29 @@ class UserSettingsViewController: UIViewController {
         alertController.addAction(dismissAction)
         present(alertController, animated: true)
     }
+    
+    func deleteAccountAlertWarning() {
+            let alertController = UIAlertController(title: "Delete Acount", message: "This action is permanent. Are you sure you want to delete your account?", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(dismissAction)
+        let confirmAction = UIAlertAction(title: "Delete Account", style: .destructive) { _ in
+            self.deleteAccountAlert()
+        }
+        alertController.addAction(confirmAction)
+        self.present(alertController, animated: true)
+    }
+    
+    func deleteAccountAlert() {
+            let alertController = UIAlertController(title: "Absolutely Sure?", message: "Your account won't be able to be recovered.", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alertController.addAction(dismissAction)
+            let confirmAction = UIAlertAction(title: "Delete Account", style: .destructive) { _ in
+                self.viewModel.deleteUser()
+            }
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true)
+        }
+    
     // MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         updateUI()
@@ -81,6 +109,10 @@ class UserSettingsViewController: UIViewController {
     
     @IBAction func signOutButtonTapped(_ sender: Any) {
         viewModel.signOut()
+    }
+    
+    @IBAction func deleteUserButtonTapped(_ sender: Any) {
+        deleteAccountAlertWarning()
     }
     
 } // End of class

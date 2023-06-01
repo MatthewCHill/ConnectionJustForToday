@@ -8,16 +8,30 @@
 import Foundation
 import FirebaseAuth
 
+protocol SignInUserViewModelDelegate: AnyObject {
+    func signInSuccessfull()
+}
+
 struct SignInUserViewModel {
     
-    func signIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+    // MARK: - Properties
+    var delegate: SignInUserViewModelDelegate?
+    
+    init(delegate: SignInUserViewModelDelegate) {
+        self.delegate = delegate
+    }
+    
+    func signIn(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error {
                 print("Error Signing In", error.localizedDescription)
+                completion(false, error)
             }
-            if let result {
-                let user = result.user
+            
+            if let authResult {
+                let user = authResult.user
                 print(user.uid)
+                completion(true, nil)
             }
         }
     }

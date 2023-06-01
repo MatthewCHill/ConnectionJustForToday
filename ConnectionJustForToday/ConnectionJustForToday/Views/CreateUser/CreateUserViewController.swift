@@ -42,9 +42,9 @@ class CreateUserViewController: UIViewController {
     @IBAction func createUserButtonTapped(_ sender: Any) {
         guard let email = userEmailTextField.text,
               let password = userPasswordTextField.text,
-              let confrimPassword = confirmPasswordTextField.text else { return }
+              let confirmPassword = confirmPasswordTextField.text else { return }
         
-        viewModel.createUser(email: email, password: password, confrimPassword: confrimPassword) { success, error in
+        viewModel.createUser(email: email, password: password, confirmPassword: confirmPassword) { success, error in
             if success == true {
                 self.presentMainVC()
             } else {

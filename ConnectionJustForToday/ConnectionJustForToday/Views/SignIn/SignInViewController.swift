@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
     // MARK: - Properties
     var viewModel: SignInUserViewModel!
@@ -23,7 +24,7 @@ class SignInViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = SignInUserViewModel()
+        viewModel = SignInUserViewModel(delegate: self)
         self.hideKeyboardWhenDone()
         let signInWithApple = ASAuthorizationAppleIDButton()
         signInWithApple.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +32,7 @@ class SignInViewController: UIViewController {
         NSLayoutConstraint.activate([
             signInWithApple.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             signInWithApple.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            signInWithApple.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -300),
+            signInWithApple.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 20),
             signInWithApple.heightAnchor.constraint(equalToConstant: 40)
         ])
         signInWithApple.addTarget(self, action: #selector(appleSignInButtonTapped), for: .touchUpInside)
@@ -97,16 +98,38 @@ class SignInViewController: UIViewController {
         authorizationController.performRequests()
     }
     
+    func presentErrorAlertController(sender: AnyObject ,error: String) {
+        guard let button = sender as? UIView else { return}
+        
+        let alertController = UIAlertController(title: "", message: error, preferredStyle: .actionSheet)
+        let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
+        alertController.addAction(dismissAction)
+        if let presenter = alertController.popoverPresentationController {
+            presenter.sourceView = button
+            presenter.sourceRect = button.bounds
+        }
+        present(alertController, animated: true)
+    }
     
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text else { return }
-        viewModel.signIn(email: email, password: password)
+        guard let email = emailTextField.text, email != "",
+              let password = passwordTextField.text, password != "" else { return }
+        viewModel.signIn(email: email, password: password) { Bool, error in
+            if let error = error {
+                self.presentErrorAlertController(sender: self.emailTextField, error: error.localizedDescription)
+            }
+        }
     }
 } // End of class
 
 // MARK: - Extensions
+
+extension SignInViewController: SignInUserViewModelDelegate {
+    func signInSuccessfull() {
+        
+    }
+}
 
 extension SignInViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
@@ -132,8 +155,9 @@ extension SignInViewController: ASAuthorizationControllerDelegate {
             }
             guard let idTokenString = String(data: appleIdToken, encoding: .utf8) else { print("No ID Token"); return}
             let firebaseCredential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-            Auth.auth().signIn(with: firebaseCredential) { [weak self] authResult, error in
+            Auth.auth().signIn(with: firebaseCredential) { _ , error in
                 // Do something after firebase sign in has completed
+                guard error != nil else { return }
                 
             }
         }
