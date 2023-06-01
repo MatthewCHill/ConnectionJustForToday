@@ -32,7 +32,7 @@ class SignInViewController: UIViewController {
         NSLayoutConstraint.activate([
             signInWithApple.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             signInWithApple.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            signInWithApple.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 20),
+            signInWithApple.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 10),
             signInWithApple.heightAnchor.constraint(equalToConstant: 40)
         ])
         signInWithApple.addTarget(self, action: #selector(appleSignInButtonTapped), for: .touchUpInside)
