@@ -28,7 +28,6 @@ class JFTReadingViewModel {
         self.firebaseService = firebaseService
         self.delegate = delegate
         self.fetchJFTReading()
-        self.loadPosts()
     }
     
     // MARK: - Functions

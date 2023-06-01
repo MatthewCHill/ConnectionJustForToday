@@ -22,6 +22,7 @@ class SPADReadingViewController: UIViewController{
         super.viewDidLoad()
         setUpActivityIndicator()
         viewModel = SPADReadingViewModel(delegate: self)
+        viewModel.fetchPosts()
         spadPostTableView.dataSource = self
     }
     

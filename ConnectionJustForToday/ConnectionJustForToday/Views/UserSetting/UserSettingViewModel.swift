@@ -51,13 +51,25 @@ class UserSettingViewModel {
                 for i in users {
                     if Auth.auth().currentUser?.uid == i.uuid {
                         self?.users.append(i)
-                        let user = i 
+                        let user = i
                         self?.delegate?.userSettingsFetched(with: user)
                     }
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func deleteUser() {
+        let user = Auth.auth().currentUser
+
+        user?.delete { error in
+          if let error = error {
+              print(error.localizedDescription)
+          } else {
+            // Account deleted successfully
+          }
         }
     }
 } // End of class

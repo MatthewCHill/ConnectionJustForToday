@@ -28,7 +28,6 @@ class SPADReadingViewModel {
         self.firebaseService = firbaseService
         self.delegate = delegate
         self.fetchJFTReading()
-        self.fetchPosts()
     }
     
     // MARK: - Functions

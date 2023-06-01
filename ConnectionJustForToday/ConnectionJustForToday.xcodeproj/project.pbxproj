@@ -53,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		3402087529F1CD6F00DC4A00 /* UIViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllers.swift; sourceTree = "<group>"; };
+		3402087729F1E76400DC4A00 /* ConnectionJustForToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConnectionJustForToday.entitlements; sourceTree = "<group>"; };
 		349B273D29D4916F00C30A17 /* ConnectionJustForToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectionJustForToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		349B274029D4916F00C30A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349B274229D4916F00C30A17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		349B273F29D4916F00C30A17 /* ConnectionJustForToday */ = {
 			isa = PBXGroup;
 			children = (
+				3402087729F1E76400DC4A00 /* ConnectionJustForToday.entitlements */,
 				34B7A67729DCB62C005ECA4E /* Views */,
 				349B279629D6218600C30A17 /* HelperFiles */,
 				349B277729D5D88D00C30A17 /* SupportingFiles */,
@@ -532,6 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConnectionJustForToday/ConnectionJustForToday.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XQ89G6F3FY;
@@ -560,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ConnectionJustForToday/ConnectionJustForToday.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XQ89G6F3FY;

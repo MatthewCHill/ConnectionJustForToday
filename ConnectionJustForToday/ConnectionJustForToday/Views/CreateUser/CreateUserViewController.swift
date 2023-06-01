@@ -31,10 +31,15 @@ class CreateUserViewController: UIViewController {
         present(viewController, animated: true)
     }
     
-    func presentErrorAlertController(error: String) {
+    func presentErrorAlertController(sender: AnyObject, error: String) {
+        guard let button = sender as? UIView else { return}
         let alertController = UIAlertController(title: "", message: error, preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Okay", style: .cancel)
         alertController.addAction(dismissAction)
+        if let presenter = alertController.popoverPresentationController {
+            presenter.sourceView = button
+            presenter.sourceRect = button.bounds
+        }
         present(alertController, animated: true)
     }
     
@@ -42,13 +47,13 @@ class CreateUserViewController: UIViewController {
     @IBAction func createUserButtonTapped(_ sender: Any) {
         guard let email = userEmailTextField.text,
               let password = userPasswordTextField.text,
-              let confrimPassword = confirmPasswordTextField.text else { return }
+              let confirmPassword = confirmPasswordTextField.text else { return }
         
-        viewModel.createUser(email: email, password: password, confrimPassword: confrimPassword) { success, error in
+        viewModel.createUser(email: email, password: password, confirmPassword: confirmPassword) { success, error in
             if success == true {
                 self.presentMainVC()
             } else {
-                self.presentErrorAlertController(error: error?.localizedDescription ?? "")
+                self.presentErrorAlertController(sender: self.userEmailTextField, error: error?.localizedDescription ?? "")
             }
         }
     }
