@@ -52,13 +52,8 @@ class JFTReadingViewModel {
                 
             case .success(let posts):
                 self?.jftPosts = posts
-                
-                for i in posts {
-                    if i.date == self?.jftReading?.date {
-                        self?.filteredJFTPosts.append(i)
-                    }
-                    self?.delegate?.postsLoadedSuccessfully()
-                }
+                self?.filteredJFTPosts = posts.filter { $0.date == self?.jftReading?.date }
+                self?.delegate?.postsLoadedSuccessfully()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -69,7 +64,7 @@ class JFTReadingViewModel {
         guard let indexOfPost = filteredJFTPosts.firstIndex(of: post) else { return }
         firebaseService.deleteJFTPost(post: post)
         filteredJFTPosts.remove(at: indexOfPost)
-        completion()
         self.delegate?.controversialPostDeleted()
+        completion()
     }
 } // End of Class

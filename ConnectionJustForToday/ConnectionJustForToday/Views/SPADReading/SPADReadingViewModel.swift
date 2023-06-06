@@ -52,13 +52,8 @@ class SPADReadingViewModel {
                 
             case .success(let posts):
                 self?.spadPosts = posts
-                
-                for i in posts {
-                    if i.date == self?.spadReading?.date {
-                        self?.filteredSpadPosts.append(i)
-                    }
-                    self?.delegate?.postsLoadedSuccessfully()
-                }
+                self?.filteredSpadPosts = posts.filter { $0.date == self?.spadReading?.date}
+                self?.delegate?.postsLoadedSuccessfully()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -69,8 +64,8 @@ class SPADReadingViewModel {
         guard let indexOfPost = filteredSpadPosts.firstIndex(of: post) else { return }
         firebaseService.deleteSPADPost(post: post)
         filteredSpadPosts.remove(at: indexOfPost)
-        completion()
         self.delegate?.controversialPostDeleted()
+        completion()
         
     }
 } // End Of Class
