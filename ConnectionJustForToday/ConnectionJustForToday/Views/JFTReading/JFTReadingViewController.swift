@@ -28,6 +28,7 @@ class JFTReadingViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         jftPostsTableView.reloadData()
+        viewModel.loadPosts()
     }
 
     // MARK: - Properties

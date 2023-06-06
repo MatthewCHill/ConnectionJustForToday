@@ -22,13 +22,13 @@ class SPADReadingViewController: UIViewController{
         super.viewDidLoad()
         setUpActivityIndicator()
         viewModel = SPADReadingViewModel(delegate: self)
-        viewModel.fetchPosts()
         spadPostTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        spadPostTableView.reloadData()
+        self.viewModel.fetchPosts()
+        self.spadPostTableView.reloadData()
     }
     
     // MARK: - Properties
